@@ -3,11 +3,12 @@
 
 class ContaBancaria{
 public:
-  ContaBancaria(int, double);
-  void sacar(double);
-  void depositar(double);
-  void transferir(double, ContaBancaria*);
+  ContaBancaria(int _numeroDaConta, double _saldo);
+  void sacar(double _valor);
+  void depositar(double _valor);
+  void transferir(double _valor, ContaBancaria* _conta);
   double getSaldo(); // TEMPORARIO PARA TESTE
+  ~ContaBancaria();
 
 protected:
   int numeroDaConta;

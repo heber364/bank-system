@@ -17,7 +17,9 @@ heber.transferir(50, &thaua);
 std::cout << "Saldo " << heber.getSaldo() << std::endl;
 std::cout << "Saldo " << thaua.getSaldo() << std::endl;
 
-ContaCorrente heber2(123, 400);
+ContaCorrente heber2(123, 100);
+std::cout << "Saldo " << heber2.getSaldo() << std::endl;
+heber2.sacar(50);
 std::cout << "Saldo " << heber2.getSaldo() << std::endl;
 
 

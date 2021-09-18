@@ -4,10 +4,12 @@
 
 class ContaCorrente: public ContaBancaria{
 public:
-  ContaCorrente(int, double);
-  void sacar(double);
+  ContaCorrente(int _numeroDaConta, double _saldo); 
+  void sacar(double _valor);
+
 private:
-  float taxaDeOperacao = 1.2;
+  double taxaDeOperacao = 1.2;
+
 };  
 
 
