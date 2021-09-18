@@ -5,7 +5,7 @@
 class ContaPoupanca: public ContaBancaria{
 public:
   ContaPoupanca(int _numeroDaConta, double _saldo); 
-  virtual void sacar(double _valor);
+  void sacar(double _valor);
   double getLimite() const;
 
 private:

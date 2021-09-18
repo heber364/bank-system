@@ -4,10 +4,10 @@
 class ContaBancaria{
 public:
   ContaBancaria(int _numeroDaConta, double _saldo);
-  virtual void sacar(double _valor) = 0;
-  virtual void depositar(double _valor) = 0;
-  virtual void transferir(double _valor, ContaBancaria* _conta) = 0;
-  double getSaldo() const ; // TEMPORARIO PARA TESTE
+  virtual void sacar(double _valor);
+  void depositar(double _valor);
+  void transferir(double _valor, ContaBancaria* _conta);
+  double getSaldo() const; // TEMPORARIO PARA TESTE
   int getNumeroDaConta() const;
   ~ContaBancaria();
 

@@ -2,10 +2,10 @@
 #define CONTACORRENTE_H
 #include "../ContaBancaria/contabancaria.h"
 
-class ContaCorrente: public ContaBancaria{
+class ContaCorrente:  public ContaBancaria{
 public:
   ContaCorrente(int _numeroDaConta, double _saldo); 
-  virtual void sacar(double _valor);
+  void sacar(double _valor);
 
 private:
   double taxaDeOperacao = 1.2;

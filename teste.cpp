@@ -14,8 +14,8 @@
 
 int main(){
 
-//ContaBancaria* heber = new ContaBancaria(123, 200);
-// ContaBancaria thaua(321, 50);
+ContaBancaria* heber = new ContaBancaria(123, 200);
+//ContaCorrente thaua(321, 50);
 
 // std::cout << "Saldo " << heber.getSaldo() << std::endl;
 // std::cout << "Saldo " << thaua.getSaldo() << std::endl;
