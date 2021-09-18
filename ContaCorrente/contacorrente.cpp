@@ -7,6 +7,10 @@ void ContaCorrente::sacar(double _valor){
   if(_valor > this->saldo){
     std::cout << "Valor de saque maior que o saldo!" << std::endl;
   }else{
-    this->saldo = this->saldo - (this->taxaDeOperacao*_valor);
+    this->saldo = this->saldo - ((this->taxaDeOperacao + 1)*_valor);
   }
+}
+
+void ContaCorrente::depositar(double _valor){
+  this->saldo = this->saldo + (_valor - (this->taxaDeOperacao * _valor));
 }

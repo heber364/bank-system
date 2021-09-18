@@ -9,9 +9,12 @@ void ContaPoupanca::sacar(double _valor){
   }else if(_valor <= this->saldo){
     this->saldo = this->saldo - _valor;
   }else if(_valor > this->saldo){
-    _valor  = _valor - this->saldo;
-    this->saldo = 0;
+    double* saldoAnterior = new(double);
+    saldoAnterior = &this->saldo;
+    this->saldo = this->saldo - _valor;
+    _valor  = _valor -  *saldoAnterior;
     this->limite = this->limite - _valor;
+    delete saldoAnterior;
   }
 }
 

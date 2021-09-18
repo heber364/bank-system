@@ -5,13 +5,14 @@
 #include "../ContaPoupanca/contapoupanca.h"
 #include "../ContaCorrente/contacorrente.h"
 //usar template aqui
-class Imprimivel:  public ContaBancaria{
+
+class Imprimivel{
 private:
   
 public:
   Imprimivel();
-   void mostrarDados(ContaBancaria* _conta);
-
+  void mostrarDados(ContaCorrente* _conta);
+  void mostrarDados(ContaPoupanca* _conta);
   
 
 };

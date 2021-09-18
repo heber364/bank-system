@@ -14,7 +14,7 @@
 
 int main(){
 
-ContaBancaria* heber = new ContaBancaria(123, 200);
+//ContaBancaria* heber = new ContaBancaria(123, 200);
 //ContaCorrente thaua(321, 50);
 
 // std::cout << "Saldo " << heber.getSaldo() << std::endl;
@@ -23,18 +23,20 @@ ContaBancaria* heber = new ContaBancaria(123, 200);
 // std::cout << "Saldo " << heber.getSaldo() << std::endl;
 // std::cout << "Saldo " << thaua.getSaldo() << std::endl;
 
-ContaCorrente* heber2 = new ContaCorrente(1234, 100);
+//ContaCorrente* heber2 = new ContaCorrente(1234, 100);
 // std::cout << "Saldo " << heber2.getSaldo() << std::endl;
 // heber2.sacar(50);
 //std::cout << "Saldo " << heber2.getSaldo() << std::endl;
 
 ContaPoupanca* heber3 = new ContaPoupanca(12345, 250);
-// heber3.sacar(1251);
-// std::cout << "Saldo: " << heber3.getSaldo() << std::endl;
-// std::cout << "Saldo de credito: " << heber3.getLimite() << std::endl;
+heber3->sacar(1200);
+std::cout << "Saldo: " << heber3->getSaldo() << std::endl;
+std::cout << "Saldo de credito: " << heber3->getLimite() << std::endl;
 
-Imprimivel tabela;
-tabela.mostrarDados(heber3);
-tabela.mostrarDados(heber2);
+// Imprimivel* impressao = new Imprimivel();
+
+// impressao->mostrarDados(heber2);
+// impressao->mostrarDados(heber3);
+
 return 0;
 }
