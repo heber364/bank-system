@@ -1,4 +1,4 @@
-#include "contabancaria.h"
+#include "contabancaria.hpp"
 #include <iostream>
 
 //construtor
@@ -33,6 +33,10 @@ void ContaBancaria::transferir(double _valor, ContaBancaria* _conta){
 //metodo que retorna o saldo
 double ContaBancaria::getSaldo() const{
   return this->saldo;
+}
+
+double ContaBancaria::getLimite() const{
+  return this->limite;
 }
 
 //metodo que retornar o numero da conta

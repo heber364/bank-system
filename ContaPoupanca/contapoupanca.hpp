@@ -9,11 +9,8 @@ public:
   ~ContaPoupanca();
 
   void sacar(double _valor);
-  double getLimite() const;
-  
   static int getNumeroDeContas();
 private:
-  double limite = 1000.00;
   static int numeroDeContas;
   
 };  

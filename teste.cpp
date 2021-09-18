@@ -1,16 +1,19 @@
 #include <iostream>
 
-#include "ContaBancaria/contabancaria.h"
+#include "ContaBancaria/contabancaria.hpp"
 #include "ContaBancaria/contabancaria.cpp"
 
-#include "ContaCorrente/contacorrente.h"
+#include "ContaCorrente/contacorrente.hpp"
 #include "ContaCorrente/contacorrente.cpp"
 
-#include "ContaPoupanca/contapoupanca.h"
+#include "ContaPoupanca/contapoupanca.hpp"
 #include "ContaPoupanca/contapoupanca.cpp"
 
-#include "Imprimivel/imprimivel.h"
+#include "Imprimivel/imprimivel.hpp"
 #include "Imprimivel/imprimivel.cpp"
+
+// #include "Relatorio/relatorio.hpp"
+// #include "Relatorio/relatorio.cpp"
 
 int main(){
 ContaCorrente* heber2 = new ContaCorrente(1234, 100);
@@ -23,10 +26,17 @@ ContaPoupanca* heber3 = new ContaPoupanca(12345, 250);
 // std::cout << "Saldo: " << heber3->getSaldo() << std::endl;
 // std::cout << "Saldo de credito: " << heber3->getLimite() << std::endl;
 
+std::cout << heber2->getLimite() << std::endl;
+std::cout << heber3->getLimite() << std::endl;
+
 Imprimivel tabela(heber2);
 Imprimivel tabela2(heber3);
 
-std::cout << "Numero de contas correntes: " << ContaCorrente::getNumeroDeContas();
+tabela2.mostrarDados();
+
+
+
+// std::cout << "Numero de contas correntes: " << ContaCorrente::getNumeroDeContas();
 
 return 0;
 }

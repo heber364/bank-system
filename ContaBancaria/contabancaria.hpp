@@ -10,11 +10,13 @@ public:
   virtual void depositar(double _valor);
   void transferir(double _valor, ContaBancaria* _conta);
   double getSaldo() const; // TEMPORARIO PARA TESTE
+  double getLimite() const;
   int getNumeroDaConta() const;
 
 protected:
   int numeroDaConta;
   double saldo;
+  double limite;
 
 };
 
