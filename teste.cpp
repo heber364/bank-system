@@ -18,12 +18,13 @@ ContaCorrente* heber2 = new ContaCorrente(1234, 100);
 // heber2->sacar(50);
 // std::cout << "Saldo " << heber2->getSaldo() << std::endl;
 
-ContaCorrente* heber3 = new ContaCorrente(12345, 250);
+ContaPoupanca* heber3 = new ContaPoupanca(12345, 250);
 // heber3->sacar(1250);
 // std::cout << "Saldo: " << heber3->getSaldo() << std::endl;
 // std::cout << "Saldo de credito: " << heber3->getLimite() << std::endl;
 
-heber2->mostrarDados();
+Imprimivel tabela(heber2);
+Imprimivel tabela2(heber3);
 
 std::cout << "Numero de contas correntes: " << ContaCorrente::getNumeroDeContas();
 
