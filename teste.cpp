@@ -6,22 +6,28 @@
 #include "ContaCorrente/contacorrente.h"
 #include "ContaCorrente/contacorrente.cpp"
 
+#include "ContaPoupanca/contapoupanca.h"
+#include "ContaPoupanca/contapoupanca.cpp"
+
 int main(){
 
-ContaBancaria heber(123, 200);
-ContaBancaria thaua(321, 50);
+// ContaBancaria heber(123, 200);
+// ContaBancaria thaua(321, 50);
 
-std::cout << "Saldo " << heber.getSaldo() << std::endl;
-std::cout << "Saldo " << thaua.getSaldo() << std::endl;
-heber.transferir(50, &thaua);
-std::cout << "Saldo " << heber.getSaldo() << std::endl;
-std::cout << "Saldo " << thaua.getSaldo() << std::endl;
+// std::cout << "Saldo " << heber.getSaldo() << std::endl;
+// std::cout << "Saldo " << thaua.getSaldo() << std::endl;
+// heber.transferir(50, &thaua);
+// std::cout << "Saldo " << heber.getSaldo() << std::endl;
+// std::cout << "Saldo " << thaua.getSaldo() << std::endl;
 
-ContaCorrente heber2(123, 100);
-std::cout << "Saldo " << heber2.getSaldo() << std::endl;
-heber2.sacar(50);
-std::cout << "Saldo " << heber2.getSaldo() << std::endl;
+// ContaCorrente heber2(1234, 100);
+// std::cout << "Saldo " << heber2.getSaldo() << std::endl;
+// heber2.sacar(50);
+//std::cout << "Saldo " << heber2.getSaldo() << std::endl;
 
-
+ContaPoupanca heber3(12345, 250);
+heber3.sacar(1251);
+std::cout << "Saldo: " << heber3.getSaldo() << std::endl;
+std::cout << "Saldo de credito: " << heber3.getLimite() << std::endl;
 return 0;
 }
