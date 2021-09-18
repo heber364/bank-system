@@ -6,12 +6,12 @@
 
 class Banco{
 public:
- void inserir(ContaBancaria* _conta);
- void remover(ContaBancaria* _conta);
- ContaBancaria procurar(int numeroDaConta);
-
+  void inserir(ContaBancaria* _conta);
+  void remover(ContaBancaria* _conta);
+  ContaBancaria procurar(int numeroDaConta);
+  std::vector<ContaBancaria> getContasBancarias() const; 
 private:
-  std::vector<ContaBancaria> ContasBancarias;  
+  std::vector<ContaBancaria> ContasBancarias;
 
 };  
 

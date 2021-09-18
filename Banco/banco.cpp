@@ -1,12 +1,9 @@
-#ifndef BANCO_H
-#define BANCO_H
-
 #include "banco.hpp"
 
-void Banco::inserir(){
-  
+void Banco::inserir(ContaBancaria* _conta){
+  this->ContasBancarias.push_back(*_conta);
 };
 
-
-
-#endif // !BANCO_H
+std::vector<ContaBancaria> Banco::getContasBancarias() const{
+  return this->ContasBancarias;
+}

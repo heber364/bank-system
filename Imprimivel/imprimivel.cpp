@@ -8,9 +8,7 @@ Imprimivel::Imprimivel(CONTA_BANCARIA* _conta){
   // this->tipoDeConta = std::to_string(typeid(&_conta).name());
   this->numeroDaConta = _conta->getNumeroDaConta();
   this->saldo = _conta->getSaldo();
-  this->limite = _conta->getLimite();
- 
-  
+  this->limite = _conta->getLimite();  
 };
 
 
