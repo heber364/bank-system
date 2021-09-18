@@ -1,7 +1,10 @@
 #include "contapoupanca.h"
 #include <iostream>
 
-ContaPoupanca::ContaPoupanca(int _numeroDaConta, double _saldo) : ContaBancaria( _numeroDaConta, _saldo){}; 
+int ContaPoupanca::numeroDeContas = 0;
+int ContaPoupanca::getNumeroDeContas(){return numeroDeContas;}
+
+ContaPoupanca::ContaPoupanca(int _numeroDaConta, double _saldo) : ContaBancaria( _numeroDaConta, _saldo){numeroDeContas++;}; 
 
 void ContaPoupanca::sacar(double _valor){
   if(_valor > this->saldo + this->limite){
@@ -9,12 +12,12 @@ void ContaPoupanca::sacar(double _valor){
   }else if(_valor <= this->saldo){
     this->saldo = this->saldo - _valor;
   }else if(_valor > this->saldo){
-    double* saldoAnterior = new(double);
-    saldoAnterior = &this->saldo;
+    double saldoAnterior = this->saldo;
+
     this->saldo = this->saldo - _valor;
-    _valor  = _valor -  *saldoAnterior;
+    _valor  = _valor - saldoAnterior;
     this->limite = this->limite - _valor;
-    delete saldoAnterior;
+    
   }
 }
 

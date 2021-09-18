@@ -8,9 +8,9 @@
 
 class Imprimivel{
 private:
-  
-public:
   Imprimivel();
+public:
+  void mostrarDados();
   void mostrarDados(ContaCorrente* _conta);
   void mostrarDados(ContaPoupanca* _conta);
   
