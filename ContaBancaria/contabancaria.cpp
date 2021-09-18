@@ -26,9 +26,13 @@ void ContaBancaria::transferir(double _valor, ContaBancaria* _conta){
   }
 }
 
-double ContaBancaria::getSaldo(){
+double ContaBancaria::getSaldo() const{
   return this->saldo;
 }
+
+int ContaBancaria::getNumeroDaConta() const{
+  return this->numeroDaConta;
+};
 
 ContaBancaria::~ContaBancaria(){
   std::cout << "Objeto destruido" << std::endl;

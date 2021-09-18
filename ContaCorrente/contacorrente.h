@@ -5,7 +5,7 @@
 class ContaCorrente: public ContaBancaria{
 public:
   ContaCorrente(int _numeroDaConta, double _saldo); 
-  void sacar(double _valor);
+  virtual void sacar(double _valor);
 
 private:
   double taxaDeOperacao = 1.2;
