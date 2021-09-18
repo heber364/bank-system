@@ -40,12 +40,20 @@ Banco BancoDoBrasil;
 
 BancoDoBrasil.inserir(heber2);
 BancoDoBrasil.inserir(heber3);
-std::vector<ContaBancaria> contasDoBNB = BancoDoBrasil.getContasBancarias();
+//std::vector<ContaBancaria> contasDoBNB = BancoDoBrasil.getContasBancarias();
 
-for (int i = 0; i < contasDoBNB.size(); i++){
-  std::cout << "Numero da conta "<< i+1 << ": "<< contasDoBNB[i].getNumeroDaConta() << std::endl;
+for (int i = 0; i < BancoDoBrasil.getContasBancarias().size(); i++){
+  std::cout << "Numero da conta "<< i << ": "<< BancoDoBrasil.getContasBancarias()[i].getNumeroDaConta() << std::endl;
 }
 
+BancoDoBrasil.remover(heber2);
 
+for (int i = 0; i < BancoDoBrasil.getContasBancarias().size(); i++){
+  std::cout << "Numero da conta "<< i << ": "<< BancoDoBrasil.getContasBancarias()[i].getNumeroDaConta()<< std::endl;
+}
+
+ContaBancaria* novo = BancoDoBrasil.procurar(123);
+
+std::cout << "Saldo: " << novo->getSaldo() << std::endl;
 return 0;
 }

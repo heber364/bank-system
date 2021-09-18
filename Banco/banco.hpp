@@ -3,15 +3,24 @@
 #include <vector>
 
 #include "../ContaBancaria/contabancaria.hpp"
+#include "../Imprimivel/imprimivel.hpp"
 
 class Banco{
 public:
-  void inserir(ContaBancaria* _conta);
-  void remover(ContaBancaria* _conta);
-  ContaBancaria procurar(int numeroDaConta);
-  std::vector<ContaBancaria> getContasBancarias() const; 
+  template <class CONTA_BANCARIA>
+  void inserir(CONTA_BANCARIA* _conta);
+
+  template <class CONTA_BANCARIA>
+  void remover(CONTA_BANCARIA* _conta);
+
+  template <class CONTA_BANCARIA>
+  CONTA_BANCARIA* procurar(int _numeroDaConta);
+
+  template <class CONTA_BANCARIA>
+  std::vector<CONTA_BANCARIA> getContasBancarias() const; 
 private:
-  std::vector<ContaBancaria> ContasBancarias;
+
+  std::vector<ContaBancaria*> ContasBancarias;
 
 };  
 
