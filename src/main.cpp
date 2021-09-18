@@ -20,9 +20,14 @@
 #include "../Executavel/executavel.hpp"
 #include "../Executavel/executavel.cpp"
 
+#include "../Relatorio/relatorio.hpp"
+#include "../Relatorio/relatorio.cpp"
+
+
 int main(){
 
-  Executavel* Executavel1 = new(Executavel);
+  Executavel* executavel = new(Executavel);
 
+  delete executavel;
   return 0;
 }

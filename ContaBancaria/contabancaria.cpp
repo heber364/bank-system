@@ -46,5 +46,5 @@ int ContaBancaria::getNumeroDaConta() const{
 
 //destrutor
 ContaBancaria::~ContaBancaria(){
-  std::cout << "Objeto destruido" << std::endl;
+  
 };

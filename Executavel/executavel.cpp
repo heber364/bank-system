@@ -7,11 +7,19 @@ Executavel::Executavel(){
   minhaContaPoupanca->sacar(5700.00);
   minhaContaCorrente->sacar(1500.00);
 
-  Imprimivel* conta1 = new Imprimivel(minhaContaCorrente);
-  Imprimivel* conta2 = new Imprimivel(minhaContaPoupanca);
+  Imprimivel* conta1 = new Imprimivel(minhaContaPoupanca);
+  Imprimivel* conta2 = new Imprimivel(minhaContaCorrente);
 
-  Relatorio relatorio1;
-  relatorio1.gerarRelatorio(conta1);
-  relatorio1.gerarRelatorio(conta2);
 
+  Relatorio* relatorio = new Relatorio;
+  relatorio->gerarRelatorio(conta1);
+  relatorio->gerarRelatorio(conta2);
+
+  delete minhaContaPoupanca;
+  delete minhaContaCorrente;
+
+  delete conta1;
+  delete conta2;
+
+  delete relatorio;
 }
