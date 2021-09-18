@@ -9,7 +9,7 @@
 
 class Imprimivel{
 private:
-  void tipoDeConta();
+  std::string tipoDeConta;
   int numeroDaConta;
   double saldo;
   double limite;
