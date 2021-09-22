@@ -2,6 +2,7 @@
 #define BANCO_H
 #include <vector>
 
+
 #include "../ContaBancaria/contabancaria.hpp"
 #include "../Imprimivel/imprimivel.hpp"
 
@@ -13,14 +14,15 @@ public:
   template <class CONTA_BANCARIA>
   void remover(CONTA_BANCARIA* _conta);
 
-  template <class CONTA_BANCARIA>
-  CONTA_BANCARIA* procurar(int _numeroDaConta);
+  // //VERIFICAR ISSO COM ALGUM MONITOR
+  
+  // template <class CONTA_BANCARIA>
+  // CONTA_BANCARIA* procurar(int _numeroDaConta);
 
-  template <class CONTA_BANCARIA>
-  std::vector<CONTA_BANCARIA> getContasBancarias() const; 
+  std::vector<ContaBancaria> getContasBancarias() const; 
 private:
 
-  std::vector<ContaBancaria*> ContasBancarias;
+  std::vector<ContaBancaria> ContasBancarias;
 
 };  
 

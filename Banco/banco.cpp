@@ -6,8 +6,7 @@ void Banco::inserir(CONTA_BANCARIA* _conta){
   this->ContasBancarias.push_back(*_conta);
 };
 
-template <class CONTA_BANCARIA>
-std::vector<CONTA_BANCARIA> Banco::getContasBancarias() const{
+std::vector<ContaBancaria> Banco::getContasBancarias() const{
   return this->ContasBancarias;
 };
 
@@ -32,20 +31,22 @@ void Banco::remover(CONTA_BANCARIA* _conta){
  
 };
 
-template <class CONTA_BANCARIA>
-CONTA_BANCARIA* Banco::procurar(int _numeroDaConta){
-  bool objEncontrado = false;
-  int posicaoDoObjetoProcurado;
-  int i = 0;
-  while ( i < this->ContasBancarias.size()){
-    if(_numeroDaConta == this->ContasBancarias[i].getNumeroDaConta()){
-      bool objEncontrado = true;
-      posicaoDoObjetoProcurado = i;
-    }
-    i++;
-  }
-  if (objEncontrado){
-    return &ContasBancarias[posicaoDoObjetoProcurado];
-  } 
+//VERIFICAR ISSO COM ALGUM MONITOR
+
+// template <class CONTA_BANCARIA>
+// CONTA_BANCARIA* Banco::procurar(int _numeroDaConta){
+//   bool objEncontrado = false;
+//   int posicaoDoObjetoProcurado;
+//   int i = 0;
+//   while ( i < this->ContasBancarias.size()){
+//     if(_numeroDaConta == this->ContasBancarias[i].getNumeroDaConta()){
+//       bool objEncontrado = true;
+//       posicaoDoObjetoProcurado = i;
+//     }
+//     i++;
+//   }
+//   if (objEncontrado){
+//     return &ContasBancarias[posicaoDoObjetoProcurado];
+//   } 
   
-};
+// };

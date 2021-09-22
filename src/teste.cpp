@@ -1,19 +1,19 @@
 #include <iostream>
 
-#include "ContaBancaria/contabancaria.hpp"
-#include "ContaBancaria/contabancaria.cpp"
+#include "../ContaBancaria/contabancaria.hpp"
+#include "../ContaBancaria/contabancaria.cpp"
 
-#include "ContaCorrente/contacorrente.hpp"
-#include "ContaCorrente/contacorrente.cpp"
+#include "../ContaCorrente/contacorrente.hpp"
+#include "../ContaCorrente/contacorrente.cpp"
 
-#include "ContaPoupanca/contapoupanca.hpp"
-#include "ContaPoupanca/contapoupanca.cpp"
+#include "../ContaPoupanca/contapoupanca.hpp"
+#include "../ContaPoupanca/contapoupanca.cpp"
 
-#include "Imprimivel/imprimivel.hpp"
-#include "Imprimivel/imprimivel.cpp"
+#include "../Imprimivel/imprimivel.hpp"
+#include "../Imprimivel/imprimivel.cpp"
 
-#include "Banco/banco.hpp"
-#include "Banco/banco.cpp"
+#include "../Banco/banco.hpp"
+#include "../Banco/banco.cpp"
 // #include "Relatorio/relatorio.hpp"
 // #include "Relatorio/relatorio.cpp"
 
@@ -52,8 +52,8 @@ for (int i = 0; i < BancoDoBrasil.getContasBancarias().size(); i++){
   std::cout << "Numero da conta "<< i << ": "<< BancoDoBrasil.getContasBancarias()[i].getNumeroDaConta()<< std::endl;
 }
 
-ContaBancaria* novo = BancoDoBrasil.procurar(123);
+// ContaBancaria* novo = BancoDoBrasil.procurar(123);
 
-std::cout << "Saldo: " << novo->getSaldo() << std::endl;
+// std::cout << "Saldo: " << novo->getSaldo() << std::endl;
 return 0;
 }

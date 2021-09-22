@@ -9,6 +9,7 @@ int ContaPoupanca::getNumeroDeContas(){return numeroDeContas;}
 
 //construtor
 ContaPoupanca::ContaPoupanca(int _numeroDaConta, double _saldo): ContaBancaria( _numeroDaConta, _saldo){
+  this->TipoDeConta = "Conta Poupanca";
   this->limite = 1000.00;
   numeroDeContas++;
 }; 

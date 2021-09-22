@@ -30,11 +30,17 @@ void ContaBancaria::transferir(double _valor, ContaBancaria* _conta){
   }
 }
 
+//metodo que retorna tipo de conta
+std::string ContaBancaria::getTipoDeConta() const{
+  return this->TipoDeConta;
+}
+
 //metodo que retorna o saldo
 double ContaBancaria::getSaldo() const{
   return this->saldo;
 }
 
+//metodo que retorna o saldo
 double ContaBancaria::getLimite() const{
   return this->limite;
 }
