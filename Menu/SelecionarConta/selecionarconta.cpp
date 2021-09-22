@@ -42,7 +42,7 @@ bool encontrouConta2(int _numeroDaConta, Banco _banco){
 
 void transfereDinhiro(int _valor, int _numeroDaConta, Banco _banco){
   if (encontrouConta2(_numeroDaConta, _banco)){
-    _banco.getContasBancarias()[posicaoDoObjetoProcurado].transferir(_valor, &_banco.getContasBancarias()[posicaoDoObjetoProcurado2]);
+    _banco.getContasBancarias()[posicaoDoObjetoProcurado].transferir(_valor, &(_banco.getContasBancarias()[posicaoDoObjetoProcurado2]));
   }else{
     std::cout << " Conta nao encontrada, tente novamente!" << std::endl;
   }
@@ -59,10 +59,12 @@ void menu(){
 };
 
 
-void opcoesDoMenu(int _opt, Banco _banco){
+void opcoesDoMenu(Banco _banco){
   do{
     menu();
-    switch (_opt){
+    switch (opt){
+      case 0:
+        break;
       case 1:
         double valorDeDeposito;
         std::cout << "Valor do deposito: ";
@@ -91,8 +93,6 @@ void opcoesDoMenu(int _opt, Banco _banco){
       case 5:
         escolherOutraConta = true;
         break;
-      case 0:
-        //voltando
       default:
         break;
     }
@@ -104,7 +104,7 @@ SelecionarConta::SelecionarConta(Banco _banco){
   do{
     inserirDados();
     if (encontrouConta(_banco)){
-      opcoesDoMenu(opt, _banco);
+      opcoesDoMenu(_banco);
     }else{
       std::cout << "Numero de conta nao encontrado, por favor, tenta novamente!" << std::endl;
     }

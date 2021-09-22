@@ -10,7 +10,6 @@ private:
   
 public:
   SelecionarConta(Banco);
-  ~SelecionarConta();
 };
 
 #endif // !SELECIONARCONTA_H
