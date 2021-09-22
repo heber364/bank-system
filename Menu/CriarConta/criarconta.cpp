@@ -35,7 +35,7 @@ void confirmaDados(){
 CriarConta::CriarConta(std::string _tipoDeConta, Banco* _banco):tipoDeConta(_tipoDeConta){ 
   //loop 1
   do{
-    confirmado1 = false;
+    confirmado1 = false;                                                            //defini confirmado1 como false, uma vez que n confirmamos nossa escolhe do item abaixo          
     inserirDados(); //função para inserir dados da nova conta
     //loop2
     do{
@@ -54,12 +54,14 @@ CriarConta::CriarConta(std::string _tipoDeConta, Banco* _banco):tipoDeConta(_tip
             ContaPoupanca* NomeDoUsuario = new ContaPoupanca(numeroDaConta, saldo); //criando objeto
             _banco->inserir(NomeDoUsuario);                                         //inserindo objeto no vetor de bancos
           }
-          confirmado2 = false;                                                       //defini confirmado como false, uma vez que n confirmamos nossa escolhe do item abaixo
-          
+                                                                                   
+          std::cout << "Conta adicionada com sucesso!\n" << std::endl;
           //loop 3
+          confirmado2 = false;                                                      //defini confirmado2 como false, uma vez que n confirmamos nossa escolhe do item abaixo
           do{
             std::cout << "Continuar adicionando conta? [0] NAO [1] SIM ";           //imprimi mensagem 
             std::cin >> opt2;                                                       //captura escolha do usuario
+            system("cls");
             switch (opt2){                                      
               case 0:                                                               //se a escolha for 0, finalizamos o programa e confirmamos a escolha
                 std::cout << "Voltando..." << std::endl;
