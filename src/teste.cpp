@@ -45,12 +45,13 @@ BancoDoBrasil.inserir(heber3);
 for (int i = 0; i < BancoDoBrasil.getContasBancarias().size(); i++){
   std::cout << "Numero da conta "<< i << ": "<< BancoDoBrasil.getContasBancarias()[i].getNumeroDaConta() << std::endl;
 }
+std::cout << BancoDoBrasil.getContasBancarias()[0].getSaldo();
 
-BancoDoBrasil.remover(heber2);
+// BancoDoBrasil.remover(heber2);
 
-for (int i = 0; i < BancoDoBrasil.getContasBancarias().size(); i++){
-  std::cout << "Numero da conta "<< i << ": "<< BancoDoBrasil.getContasBancarias()[i].getNumeroDaConta()<< std::endl;
-}
+// for (int i = 0; i < BancoDoBrasil.getContasBancarias().size(); i++){
+//   std::cout << "Numero da conta "<< i << ": "<< BancoDoBrasil.getContasBancarias()[i].getNumeroDaConta()<< std::endl;
+// }
 
 // ContaBancaria* novo = BancoDoBrasil.procurar(123);
 

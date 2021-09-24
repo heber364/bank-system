@@ -23,24 +23,25 @@
 #include "../Relatorio/relatorio.hpp"
 #include "../Relatorio/relatorio.cpp"
 
-// #include "CriarConta/criarconta.hpp"
-// #include "CriarConta/criarconta.cpp"
+#include "CriarConta/criarconta.hpp"
+#include "CriarConta/criarconta.cpp"
 
 #include "SelecionarConta/selecionarconta.hpp"
 #include "SelecionarConta/selecionarconta.cpp"
 
 int main(){
-  Banco* bancoCentral = new Banco();
-  // CriarConta("conta-corrente", bancoCentral);
+  Banco bancoCentral;
+  CriarConta criarConta("conta-corrente", &bancoCentral);
   
-  std::cout << bancoCentral->getContasBancarias().size();
+  std::cout << bancoCentral.getContasBancarias().size();
 
-  SelecionarConta(*bancoCentral);
+  system("CLS");
 
-  for (int i = 0; i < bancoCentral->getContasBancarias().size(); i++){
-    std::cout << bancoCentral->getContasBancarias()[i].getNumeroDaConta() << std::endl;
+  for (int i = 0; i < bancoCentral.getContasBancarias().size(); i++){
+    std::cout << bancoCentral.getContasBancarias()[i].getNumeroDaConta() << std::endl;
   }
 
+  SelecionarConta selecionarConta(bancoCentral);
 
   return 0;
 }
