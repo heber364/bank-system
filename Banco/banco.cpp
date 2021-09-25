@@ -1,52 +1,29 @@
 #include "banco.hpp"
 #include <vector>
 
-template <class CONTA_BANCARIA>
-void Banco::inserir(CONTA_BANCARIA* _conta){
-  this->ContasBancarias.push_back(*_conta);
-};
 
-std::vector<ContaBancaria> Banco::getContasBancarias() const{
-  return this->ContasBancarias;
-};
+void Banco::inserir(ContaBancaria* _conta){
+  ContasBancarias.push_back(_conta);
+}
 
-template <class CONTA_BANCARIA>
-void Banco::remover(CONTA_BANCARIA* _conta){
-    bool objEncontrado = false;
-    int posicaoDoObjetoProcurado;
-
+void Banco::remover(ContaBancaria* _conta){
     for (int i = 0; i < this->ContasBancarias.size(); i++){
-      if(this->ContasBancarias[i].getNumeroDaConta() == _conta->getNumeroDaConta()){
-        posicaoDoObjetoProcurado = i;
-        objEncontrado = true;
+      if(_conta->getNumeroDaConta() == ContasBancarias[i]->getNumeroDaConta()){
+        ContasBancarias.erase(ContasBancarias.begin()+i); 
+	      std::cout<<"Conta foi excluida com Sucesso."<<std::endl;
       }
     }
-
-    if(objEncontrado){
-      std::cout << "Conta encontrada na posicao " << posicaoDoObjetoProcurado << "!" << std::endl;
-      this->ContasBancarias.erase(this->ContasBancarias.begin()+posicaoDoObjetoProcurado);
-    }else{
-      std::cout << "Conta nao foi encontrada!" << std::endl;
-    }
- 
 };
 
 //VERIFICAR ISSO COM ALGUM MONITOR
 
-// template <class CONTA_BANCARIA>
-// CONTA_BANCARIA* Banco::procurar(int _numeroDaConta){
-//   bool objEncontrado = false;
-//   int posicaoDoObjetoProcurado;
-//   int i = 0;
-//   while ( i < this->ContasBancarias.size()){
-//     if(_numeroDaConta == this->ContasBancarias[i].getNumeroDaConta()){
-//       bool objEncontrado = true;
-//       posicaoDoObjetoProcurado = i;
-//     }
-//     i++;
-//   }
-//   if (objEncontrado){
-//     return &ContasBancarias[posicaoDoObjetoProcurado];
-//   } 
-  
-// };
+ContaBancaria* Banco::procurar(int _numeroDaConta){
+  for(int i = 0; i <= ContasBancarias.size(); i++)//Percorre o vetor de contas
+	{
+		if(_numeroDaConta == ContasBancarias[i]->getNumeroDaConta())//Encontra a conta desejada
+		{
+			return(ContasBancarias[i]);//Retorna a conta desejada
+		}
+	}
+	return(NULL);//Retorna vazio caso não encontre a conta
+};

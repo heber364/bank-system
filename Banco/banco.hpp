@@ -1,28 +1,20 @@
 #ifndef BANCO_H
 #define BANCO_H
+#include <iostream>
 #include <vector>
-
 
 #include "../ContaBancaria/contabancaria.hpp"
 #include "../Imprimivel/imprimivel.hpp"
 
 class Banco{
 public:
-  template <class CONTA_BANCARIA>
-  void inserir(CONTA_BANCARIA* _conta);
+  std::vector<ContaBancaria*> ContasBancarias;
+  void inserir(ContaBancaria*);
+  void remover(ContaBancaria*);
+  ContaBancaria* procurar(int);
 
-  template <class CONTA_BANCARIA>
-  void remover(CONTA_BANCARIA* _conta);
-
-  // //VERIFICAR ISSO COM ALGUM MONITOR
-  
-  // template <class CONTA_BANCARIA>
-  // CONTA_BANCARIA* procurar(int _numeroDaConta);
-
-  std::vector<ContaBancaria> getContasBancarias() const; 
 private:
-
-  std::vector<ContaBancaria> ContasBancarias;
+  
 
 };  
 
