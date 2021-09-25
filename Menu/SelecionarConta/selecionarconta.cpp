@@ -1,8 +1,6 @@
 #include <iostream>
 #include "selecionarconta.hpp"
 
-
-
 void SelecionarConta::setContaPrincipal(){
   int numeroDaConta;
   std::cout << "INFORME O NUMERO DA CONTA PROCURADA:" << std::endl;
@@ -56,7 +54,25 @@ void SelecionarConta::opcoesDoMenu(){
         std::cin >> valorDeTransferencia;
         setContaSecundaria();
         if (contaSelecionada2 != NULL){
-          contaSelecionada->transferir(valorDeTransferencia, *contaSelecionada2);
+          if (valorDeTransferencia > contaSelecionada->getSaldo()){
+            std::cout << "Valor de transferencia maior que o saldo em conta!" << std::endl;
+            std::cout << "--------------------------------------------------" << std::endl;
+            std::cout << "Saldo atual: " << contaSelecionada->getSaldo() << std::endl;
+            std::cout << "Valor requerido: " << valorDeTransferencia << std::endl;
+            system("pause");
+            system("cls");
+          }else{
+            std::cout << "Transferencia realizada com sucesso!" << std::endl;
+            contaSelecionada->transferir(valorDeTransferencia, *contaSelecionada2);
+            system("pause");
+            system("cls");
+          }
+          
+        }else{
+          system("cls");
+          std::cout << "CONTA INEXISTENTE" << std::endl;
+          system("PAUSE");
+          system("cls");
         }
       case 4:
         system("CLS");
@@ -69,6 +85,7 @@ void SelecionarConta::opcoesDoMenu(){
         system("CLS");
         break;
       default:
+        printValorInvalido();
         break;
     }
   } while (!escolherOutraConta);

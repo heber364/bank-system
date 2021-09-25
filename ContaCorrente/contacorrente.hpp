@@ -12,7 +12,6 @@ public:
   void depositar(double _valor);
   void mostrarDados() const;
   
-  static int getNumeroDeContas();
 private:
   double taxaDeOperacao = 0.01;
 

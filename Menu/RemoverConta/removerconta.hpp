@@ -2,6 +2,7 @@
 #define REMOVERCONTA_H
 
 #include "../../Banco/bancoCentral.hpp"
+#include "../../voidsauxiliares.hpp"
 
 class RemoverConta{
 private:
@@ -11,7 +12,7 @@ public:
   RemoverConta();
   ContaBancaria* contaSelecionada;
   int numeroDaConta;
-  
+  bool finalizar = false;
 };
 
 

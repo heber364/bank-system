@@ -6,6 +6,7 @@
 #include "../../ContaPoupanca/contapoupanca.hpp"
 
 #include "../../Banco/bancoCentral.hpp"
+#include "../../voidsauxiliares.hpp"
 
 class CriarConta{
 private:
@@ -27,7 +28,7 @@ public:
   void inserirDados(); 
   void confirmaDados();
   void setTipoDeConta();
-  void printValorInvalido();
+
 
 };
 

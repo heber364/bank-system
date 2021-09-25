@@ -35,6 +35,8 @@
 #include "../Menu/menu.hpp"
 #include "../Menu/menu.cpp"
 
+#include "../voidsAuxiliares.hpp"
+
 int main(){
   
   Menu _menu;

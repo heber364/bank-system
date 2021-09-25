@@ -14,6 +14,7 @@ ContaCorrente::ContaCorrente(int _numeroDaConta, double _saldo) : ContaBancaria(
 void ContaCorrente::sacar(double _valor){
   if(_valor > this->saldo){
     std::cout << "Valor de saque maior que o saldo!" << std::endl;
+    system("PAUSE");
   }else{
     this->saldo = this->saldo - ((this->taxaDeOperacao + 1)*_valor);
   }

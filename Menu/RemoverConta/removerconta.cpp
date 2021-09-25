@@ -1,7 +1,7 @@
 #include "removerconta.hpp"
 
 void RemoverConta::setConta(){
-  std::cout << "INSIRA O NUMERO DA CONTA A SER REMOIDA: " << std::endl;
+  std::cout << "INSIRA O NUMERO DA CONTA A SER REMOVIDA: " << std::endl;
   std::cin >> this->numeroDaConta;
   this->contaSelecionada = bancoCentral.procurar(numeroDaConta);
 }
@@ -21,23 +21,22 @@ void RemoverConta::confirmarRemocao(){
     if (opt == 0){
       sair = true;
     }else if(opt == 1){
+      system("CLS");
       bancoCentral.remover(contaSelecionada);
       sair = true;
-      system("CLS");
-    }else{
-      system("CLS");
-      std::cout << "====================================" << std::endl;
-      std::cout << "==== SELECIONE UMA OPCAO VALIDA ====" << std::endl;
-      std::cout << "====================================" << std::endl;
       system("pause");
-      system("CLS");
+      finalizar = true;
+
+
+    }else{
+      printValorInvalido(); //função void do arquivo voidsAuxliares
     }    
   } while (!sair);
 }
 
 
 RemoverConta::RemoverConta(){
-  bool finalizar = false;
+  finalizar = false;
   do{
     setConta();
     if (contaSelecionada != NULL){
@@ -55,4 +54,5 @@ RemoverConta::RemoverConta(){
       }
     }
   }while (!finalizar); 
+  system("CLS");
 }

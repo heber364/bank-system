@@ -2,14 +2,6 @@
 #include <iostream>
 #include <string>
 
-void CriarConta::printValorInvalido(){
-  system("CLS");
-  std::cout << "====================================" << std::endl;
-  std::cout << "==== SELECIONE UMA OPCAO VALIDA ====" << std::endl;
-  std::cout << "====================================" << std::endl;
-  system("pause");
-  system("CLS");
-}
 
 void CriarConta::setTipoDeConta(){
   do{
@@ -34,14 +26,30 @@ void CriarConta::setTipoDeConta(){
 };
 
 void CriarConta::inserirDados(){
-  std::cout << "Qual numero da sua nova conta: ";
-  std::cin >> this->numeroDaConta;
-  std::cout << "Qual o saldo inicial: ";
-  std::cin >> this->saldo;
-  system("cls");
+  bool sair = false;
+  ContaBancaria* contaAuxiliar;
+ 
+
+  do{
+    std::cout << "Qual numero da sua nova conta: ";
+    std::cin >> this->numeroDaConta;
+    std::cout << "Qual o saldo inicial: ";
+    std::cin >> this->saldo;
+
+    contaAuxiliar = bancoCentral.procurar(numeroDaConta);
+    if (contaAuxiliar != NULL){
+      std::cout << "Numero de conta existente! Por favor, escolha outro numero" << std::endl;
+      system("pause");
+      system("cls");
+    }else{
+      sair = true;
+    }   
+  } while (!sair);
+
 };
 
 void CriarConta::confirmaDados(){
+  system("cls");
   std::string _tipoDeConta = (this->tipoDeConta==1) ?  "Conta Corrente" : "Conta Poupanca" ;
   std::cout << "---------------------------------------------"<<std::endl;
   std::cout << "Confima os dados? [0] NAO [1] SIM [2] Voltar" << std::endl;
@@ -87,8 +95,6 @@ CriarConta::CriarConta(){
             system("cls");
             switch (this->opt2){                                      
               case 0:                                                               //se a escolha for 0, finalizamos o programa e confirmamos a escolha
-                std::cout << "Voltando..." << std::endl;
-                system("PAUSE");
                 system("CLS");
                 this->finalizado = true;
                 this->confirmado2 = true;
@@ -100,9 +106,7 @@ CriarConta::CriarConta(){
                 this->confirmado1 = true;                                                 
                 break;    
               default:                                                              //se escolher outro valor, não confirmamos e nem finalizamos, dessa forma, não sairemos do loop 3 
-                std::cout << "Valor invalido!";
-                system("PAUSE");
-                system("CLS");
+                printValorInvalido(); //função void  do arquivo voidsAuxiliares
                 
             }          
           } while (!this->confirmado2);                                                    //enquanto não for confirmado, o usuario continuará no loop 3
@@ -112,9 +116,7 @@ CriarConta::CriarConta(){
           this->confirmado1 = true;
           break;
         default:                                                                    //se digitar um valor inválido, ele chama novamente a funçao confirma dados, até q a pessoa digite um valor válido
-          std::cout << "Digite uma opcao valida" << std::endl;
-          system("PAUSE");
-          system("CLS");
+          printValorInvalido(); //função void  do arquivo voidsAuxiliares
           break;
       }
     };  

@@ -9,6 +9,7 @@ ContaBancaria::ContaBancaria(int _numeroDaConta, double _saldo):numeroDaConta(_n
 void ContaBancaria::sacar(double _valor){
   if(_valor > this->saldo){
     std::cout << "Valor de saque maior que o saldo!" << std::endl;
+    system("PAUSE");
   }else{
     this->saldo = this->saldo - _valor;
   }

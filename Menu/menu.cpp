@@ -1,14 +1,6 @@
 #include "menu.hpp"
 #include <iostream>
 
-void Menu::printValorInvalido(){
-  system("CLS");
-  std::cout << "====================================" << std::endl;
-  std::cout << "==== SELECIONE UMA OPCAO VALIDA ====" << std::endl;
-  std::cout << "====================================" << std::endl;
-  system("pause");
-  system("CLS");
-}
 
 Menu::Menu(){
   system("CLS");
@@ -17,7 +9,7 @@ Menu::Menu(){
 
   do{
     int opt;
-    printBannerMenu();
+    printBannerBanco();
     // std::cout << "=====================================================================================================================" << std::endl;
     std::cout << "    [ 1 ] CRIAR CONTA       [ 2 ] SELECIONAR CONTA        [ 3 ] REMOVER CONTA       [ 4 ] GERAR RELATORIO DO BANCO   \n" << std::endl;
     std::cout << "    [ 0 ] Finalizar Aplicacao " << std::endl;
@@ -52,7 +44,9 @@ Menu::Menu(){
       SelecionarConta _selecionarConta;
     }else if (opt == 3){
       RemoverConta _removerConta;
-    }else{ 
+    }else if (opt == 4) { 
+      GerarRelatorio _gerarRelatorio;
+    }else{
       printValorInvalido();
     }
     

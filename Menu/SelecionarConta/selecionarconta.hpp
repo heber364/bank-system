@@ -7,6 +7,7 @@
 
 #include "../../Banco/bancoCentral.hpp"
 
+#include "../../voidsauxiliares.hpp"
 
 class SelecionarConta{
 private:
