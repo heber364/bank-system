@@ -1,17 +1,14 @@
 #include "contacorrente.hpp"
 #include <iostream>
 
-//numero de contas intanciadas
-int ContaCorrente::numeroDeContas = 0;
 
-//metodo que retorna numero de contas intanciadas
-int ContaCorrente::getNumeroDeContas(){return numeroDeContas;}
+
 
 //construtor
 ContaCorrente::ContaCorrente(int _numeroDaConta, double _saldo) : ContaBancaria( _numeroDaConta, _saldo){
   this->TipoDeConta = "Conta Corrente";
   this->limite = 0;
-  numeroDeContas++;}; 
+}; 
 
 //metodo de sacar
 void ContaCorrente::sacar(double _valor){
@@ -35,4 +32,4 @@ void ContaCorrente::mostrarDados(){
 }
 
 //destrutor
-ContaCorrente::~ContaCorrente(){numeroDeContas--;};
+ContaCorrente::~ContaCorrente(){};

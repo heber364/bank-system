@@ -14,8 +14,7 @@ public:
   
   static int getNumeroDeContas();
 private:
-  double taxaDeOperacao = 0.2;
-  static int numeroDeContas;
+  double taxaDeOperacao = 0.01;
 
 };  
 

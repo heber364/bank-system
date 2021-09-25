@@ -8,6 +8,7 @@
 class SelecionarConta{
 private:
   //atributos
+  Banco bancoCentral;
   int opt;
   bool escolherOutraConta = false;
   bool finalizar = false; 
@@ -16,16 +17,15 @@ private:
 
 private:
   //métodos
-  void setContaPrincipal(Banco* _banco);
-  void setContaSecundaria(Banco* _banco);
+  void setContaPrincipal();
+  void setContaSecundaria();
 
   void menu();
-  void opcoesDoMenu(Banco* _banco);
+  void opcoesDoMenu();
   
-  void transfereDinheiro(int _valor, Banco* _banco);
   
 public:
-  SelecionarConta(Banco* _banco);
+  SelecionarConta();
   ~SelecionarConta();
 };
 

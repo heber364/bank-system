@@ -1,29 +1,22 @@
 #include "selecionarconta.hpp"
 #include <iostream>
+#include <vector>
 
 
-void SelecionarConta::setContaPrincipal(Banco* _banco){
+void SelecionarConta::setContaPrincipal(){
   int numeroDaConta;
   std::cout << "Informe o numero da conta procurada:\nCaso deseja voltar ao menu anterior digite 0!" << std::endl;
   std::cin >> numeroDaConta;
-  this->contaSelecionada[0] = _banco->procurar(numeroDaConta);
+  this->contaSelecionada[0] = bancoCentral.procurar(numeroDaConta);
 }
 
-void SelecionarConta::setContaSecundaria(Banco* _banco){
+
+void SelecionarConta::setContaSecundaria(){
   int numeroDaConta;
   std::cout << "Numero da conta que recebera a transferencia: " << std::endl;
   std::cin >> numeroDaConta;
-  this->contaSelecionada[1] = _banco->procurar(numeroDaConta);
+  this->contaSelecionada[1] = bancoCentral.procurar(numeroDaConta);
 }
-
-
-// void SelecionarConta::transfereDinheiro(int _valor, Banco* _banco){
-//   this->contaSelecionada[0]->transferir(_valor, _banco);
-//   std::cout << "Transferencia realizada com sucesso!\nExtrato da transferencia: ";
-//   std::cout << "Valor: " << _valor << "Beneficiado: " << _banco.getContasBancarias()[posicaoDoObjetoProcurado2_SC].getNumeroDaConta() << std::endl;
-//   system("PAUSE");
-//   system("CLS");
-// }
 
 
 void SelecionarConta::menu(){
@@ -36,7 +29,7 @@ void SelecionarConta::menu(){
 }
 
 
-void SelecionarConta::opcoesDoMenu(Banco *_banco){
+void SelecionarConta::opcoesDoMenu(){
   do{
     menu();
     switch (opt){
@@ -60,7 +53,7 @@ void SelecionarConta::opcoesDoMenu(Banco *_banco){
         double valorDeTransferencia;
         std::cout << "Valor da tranferencia: ";
         std::cin >> valorDeTransferencia;
-        setContaSecundaria(_banco);
+        setContaSecundaria();
         if (contaSelecionada[1] != NULL){
           contaSelecionada[0]->transferir(valorDeTransferencia, *contaSelecionada[1]);
         }
@@ -72,7 +65,6 @@ void SelecionarConta::opcoesDoMenu(Banco *_banco){
         break;
       case 5:
         escolherOutraConta = true;
-        
         break;
       default:
         break;
@@ -82,12 +74,20 @@ void SelecionarConta::opcoesDoMenu(Banco *_banco){
 }
 
 
-SelecionarConta::SelecionarConta(Banco* _banco){
+SelecionarConta::SelecionarConta(){
+
+  std::vector<ContaBancaria*> c_aux;
+
+  ContaCorrente* heber = new ContaCorrente(123, 100);
+  ContaPoupanca* heber2 = new ContaPoupanca(321, 250);
+  
+  bancoCentral.inserir(heber);
+  bancoCentral.inserir(heber2);
 
   do{
-    setContaPrincipal(_banco);
+    setContaPrincipal();
     if (contaSelecionada[0] != NULL && contaSelecionada[0] != 0){
-      opcoesDoMenu(_banco);
+      opcoesDoMenu();
     }else if(contaSelecionada[0] == NULL){
       std::cout << "Numero de conta nao encontrado, por favor, tenta novamente!" << std::endl;
     }else if(contaSelecionada[0] == 0){
