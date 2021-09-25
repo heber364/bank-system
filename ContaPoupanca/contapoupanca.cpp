@@ -1,17 +1,10 @@
 #include "contapoupanca.hpp"
 #include <iostream>
 
-//numero de contas intanciadas
-int ContaPoupanca::numeroDeContas = 0;
-
-//metodo de retornar numero de contas instanciadas
-int ContaPoupanca::getNumeroDeContas(){return numeroDeContas;}
-
 //construtor
 ContaPoupanca::ContaPoupanca(int _numeroDaConta, double _saldo): ContaBancaria( _numeroDaConta, _saldo){
   this->TipoDeConta = "Conta Poupanca";
   this->limite = 1000.00;
-  numeroDeContas++;
 }; 
 
 //metodo sacar
@@ -33,5 +26,15 @@ void ContaPoupanca::sacar(double _valor){
   }
 }
 
+//metodo de mostrar dados
+void ContaPoupanca::mostrarDados() const{
+  std::cout << "==========================================" << std::endl;
+  std::cout << "Tipo de conta:   " << this->getTipoDeConta() << std::endl;
+  std::cout << "Numero da conta: " << this->getNumeroDaConta() << std::endl;
+  std::cout << "Saldo:           " << this->getSaldo() << std::endl;
+  std::cout << "Limite:          " << this->getLimite() << std::endl;
+  std::cout << "==========================================" << std::endl;
+
+}
 //destrutor
-ContaPoupanca::~ContaPoupanca(){numeroDeContas--;}; 
+ContaPoupanca::~ContaPoupanca(){}; 

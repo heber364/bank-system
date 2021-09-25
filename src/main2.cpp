@@ -29,6 +29,9 @@
 #include "../Menu/SelecionarConta/selecionarconta.hpp"
 #include "../Menu/SelecionarConta/selecionarconta.cpp"
 
+#include "../Menu/RemoverConta/removerconta.hpp"
+#include "../Menu/RemoverConta/removerconta.cpp"
+
 #include "../Menu/menu.hpp"
 #include "../Menu/menu.cpp"
 

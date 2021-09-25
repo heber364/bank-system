@@ -3,7 +3,7 @@
 
 #include "SelecionarConta/selecionarconta.hpp"
 #include "CriarConta/criarconta.hpp"
-
+#include "RemoverConta/removerconta.hpp"
 class Menu{
 
 public:

@@ -5,7 +5,7 @@
 
 void SelecionarConta::setContaPrincipal(){
   int numeroDaConta;
-  std::cout << "Informe o numero da conta procurada:\nCaso deseja voltar ao menu anterior digite 0!" << std::endl;
+  std::cout << "INFORME O NUMERO DA CONTA PROCURADA:" << std::endl;
   std::cin >> numeroDaConta;
   contaSelecionada = bancoCentral.procurar(numeroDaConta);
 }
@@ -36,6 +36,7 @@ void SelecionarConta::opcoesDoMenu(){
       case 0:
         finalizar = true; 
         escolherOutraConta = true;
+        system("CLS");
         break;
       case 1:
         double valorDeDeposito;
@@ -57,14 +58,15 @@ void SelecionarConta::opcoesDoMenu(){
         if (contaSelecionada2 != NULL){
           contaSelecionada->transferir(valorDeTransferencia, *contaSelecionada2);
         }
-        
-        
       case 4:
-        std::cout <<"Saldo: " <<  contaSelecionada->getSaldo() << std::endl;
-        system("pause");
+        system("CLS");
+        contaSelecionada->mostrarDados();
+        system("PAUSE");
+        system("CLS");
         break;
       case 5:
         escolherOutraConta = true;
+        system("CLS");
         break;
       default:
         break;
@@ -79,9 +81,19 @@ SelecionarConta::SelecionarConta(){
   do{
     setContaPrincipal();
     if (contaSelecionada != NULL && contaSelecionada != 0){
+      system("CLS");
       opcoesDoMenu();
     }else if(contaSelecionada == NULL){
-      std::cout << "Numero de conta nao encontrado, por favor, tenta novamente!" << std::endl;
+      system("CLS");
+      int opt;
+      std::cout << "O NUMERO DA CONTA  NAO ENCOTRADO! " << std::endl;
+      std::cout << "[ qualquer outro numero ] TENTAR NOVAMENTE [ 0 ] SAIR" << std::endl; 
+      std::cin >> opt;
+      if (opt == 0){
+        finalizar = true; 
+        system("CLS");
+      }
+    
     }else if(contaSelecionada == 0){
       this->finalizar = true;
     }

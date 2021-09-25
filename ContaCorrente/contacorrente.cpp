@@ -25,10 +25,13 @@ void ContaCorrente::depositar(double _valor){
 }
 
 //metodo de mostrar dados
-void ContaCorrente::mostrarDados(){
-  std::cout << "Tipo de Conta: " << "Conta Corrente" << std::endl;
-  std::cout << "Numero da Conta: " << this->getNumeroDaConta() << std::endl;
-  std::cout << "Saldo da Conta: " << this->getSaldo() << std::endl;
+void ContaCorrente::mostrarDados() const{
+  std::cout << "==========================================" << std::endl;
+  std::cout << "Tipo de conta:   " << this->getTipoDeConta() << std::endl;
+  std::cout << "Numero da conta: " << this->getNumeroDaConta() << std::endl;
+  std::cout << "Saldo:           " << this->getSaldo() << std::endl;
+  std::cout << "==========================================" << std::endl;
+
 }
 
 //destrutor

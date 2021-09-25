@@ -9,12 +9,17 @@ public:
 
   virtual void sacar(double _valor);
   virtual void depositar(double _valor);
+  virtual void mostrarDados() const;
+  
   void transferir(double _valor, ContaBancaria& _conta);
   
-  std::string getTipoDeConta() const;
-  double getSaldo() const; // TEMPORARIO PARA TESTE
-  double getLimite() const;
   int getNumeroDaConta() const;
+  double getSaldo() const; 
+  double getLimite() const;
+
+  std::string getTipoDeConta() const;
+  void setTipoDeConta(std::string _tipoDeConta);
+    
 
 protected:
   std::string TipoDeConta;

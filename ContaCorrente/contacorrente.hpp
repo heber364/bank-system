@@ -10,7 +10,7 @@ public:
 
   void sacar(double _valor);
   void depositar(double _valor);
-  void mostrarDados();
+  void mostrarDados() const;
   
   static int getNumeroDeContas();
 private:

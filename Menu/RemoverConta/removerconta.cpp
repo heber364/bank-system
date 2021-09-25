@@ -1,0 +1,58 @@
+#include "removerconta.hpp"
+
+void RemoverConta::setConta(){
+  std::cout << "INSIRA O NUMERO DA CONTA A SER REMOIDA: " << std::endl;
+  std::cin >> this->numeroDaConta;
+  this->contaSelecionada = bancoCentral.procurar(numeroDaConta);
+}
+
+
+void RemoverConta::confirmarRemocao(){
+  bool sair = false;
+  
+  do{
+    int opt;
+    std::cout << "-----------------------------------------------------"<<std::endl;
+    std::cout << "CONFIRMA REMOCAO DE CONTA [0] NAO [1] SIM" << std::endl;
+    std::cout << "-----------------------------------------------------"<<std::endl;
+    contaSelecionada->mostrarDados();
+    std::cin >> opt;
+
+    if (opt == 0){
+      sair = true;
+    }else if(opt == 1){
+      bancoCentral.remover(contaSelecionada);
+      sair = true;
+      system("CLS");
+    }else{
+      system("CLS");
+      std::cout << "====================================" << std::endl;
+      std::cout << "==== SELECIONE UMA OPCAO VALIDA ====" << std::endl;
+      std::cout << "====================================" << std::endl;
+      system("pause");
+      system("CLS");
+    }    
+  } while (!sair);
+}
+
+
+RemoverConta::RemoverConta(){
+  bool finalizar = false;
+  do{
+    setConta();
+    if (contaSelecionada != NULL){
+      system("CLS");
+      confirmarRemocao();
+    }else{
+      system("CLS");
+      int opt;
+      std::cout << "O NUMERO DA CONTA NAO ENCOTRADO! " << std::endl;
+      std::cout << "[ qualquer outro numero ] TENTAR NOVAMENTE [ 0 ] SAIR" << std::endl; 
+      std::cin >> opt;
+      if (opt == 0){
+        finalizar = true; 
+        system("CLS");
+      }
+    }
+  }while (!finalizar); 
+}

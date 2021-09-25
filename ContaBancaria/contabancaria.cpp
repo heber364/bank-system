@@ -4,6 +4,7 @@
 //construtor
 ContaBancaria::ContaBancaria(int _numeroDaConta, double _saldo):numeroDaConta(_numeroDaConta), saldo(_saldo){};
 
+
 //metodo de sacar
 void ContaBancaria::sacar(double _valor){
   if(_valor > this->saldo){
@@ -13,10 +14,12 @@ void ContaBancaria::sacar(double _valor){
   }
 }
 
+
 //metodo de depositar
 void ContaBancaria::depositar(double _valor){
   this->saldo = this->saldo + _valor;
 }
+
 
 //metodo de tranferir
 void ContaBancaria::transferir(double _valor, ContaBancaria& _conta){
@@ -28,25 +31,40 @@ void ContaBancaria::transferir(double _valor, ContaBancaria& _conta){
   }
 }
 
+
 //metodo que retorna tipo de conta
 std::string ContaBancaria::getTipoDeConta() const{
   return this->TipoDeConta;
 }
+
+
+//metodo que seta o tipo de conta
+void ContaBancaria::setTipoDeConta(std::string _tipoDeConta){
+  this->TipoDeConta = _tipoDeConta;
+}
+
 
 //metodo que retorna o saldo
 double ContaBancaria::getSaldo() const{
   return this->saldo;
 }
 
+
+//metodo virtual que mostra os dados da conta
+void ContaBancaria::mostrarDados() const{};
+
+
 //metodo que retorna o saldo
 double ContaBancaria::getLimite() const{
   return this->limite;
 }
 
+
 //metodo que retornar o numero da conta
 int ContaBancaria::getNumeroDaConta() const{
   return this->numeroDaConta;
 };
+
 
 //destrutor
 ContaBancaria::~ContaBancaria(){

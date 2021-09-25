@@ -2,14 +2,35 @@
 #include <iostream>
 #include <string>
 
+void CriarConta::printValorInvalido(){
+  system("CLS");
+  std::cout << "====================================" << std::endl;
+  std::cout << "==== SELECIONE UMA OPCAO VALIDA ====" << std::endl;
+  std::cout << "====================================" << std::endl;
+  system("pause");
+  system("CLS");
+}
+
 void CriarConta::setTipoDeConta(){
   do{
     std::cout << "Selecione o tipo de conta: " << std::endl;
     std::cout << "[ 1 ] Conta Corrente [ 2 ] Conta Poupanca [ 0 ] Voltar" << std::endl;
-    std::cin >> this->tipoDeConta;
+    std::cin >> opt;
+    if (opt != 1 && opt != 2 && opt != 0){
+      printValorInvalido();
+    }else{
+      this->tipoDeConta = opt;
+    }
   } while (tipoDeConta != 1 && tipoDeConta != 2 && tipoDeConta != 0);
   
-
+  if (tipoDeConta!=0){
+    system("CLS");
+    inserirDados();  // se o tipo de conta for diferente de 0, ele é chamado a função para inserir dados da nova conta
+  }else{
+    this->confirmado1 = true; // se o usuario escolher 0 para voltar, é necessário setar confirmado1 e finalizado para true para que n entre no loop e para que saia do loop, respectivamente
+    this->finalizado = true;  
+  }
+  
 };
 
 void CriarConta::inserirDados(){
@@ -22,7 +43,6 @@ void CriarConta::inserirDados(){
 
 void CriarConta::confirmaDados(){
   std::string _tipoDeConta = (this->tipoDeConta==1) ?  "Conta Corrente" : "Conta Poupanca" ;
-
   std::cout << "---------------------------------------------"<<std::endl;
   std::cout << "Confima os dados? [0] NAO [1] SIM [2] Voltar" << std::endl;
   std::cout << "---------------------------------------------"<<std::endl;
@@ -38,9 +58,8 @@ CriarConta::CriarConta(){
   do{
     this->confirmado1 = false;                                                       //defini confirmado1 como false, uma vez que n confirmamos nossa escolhe do item abaixo          
     setTipoDeConta(); // função para inserir o tipo de conta
-    inserirDados(); //função para inserir dados da nova conta
     //loop2
-    do{
+    while(!this->confirmado1){
       confirmaDados(); //função para confirmar dados inseridos
       switch (this->opt){
         case 0:                                                                     //se escolher 0, o usuário digitará novamente os dados
@@ -50,10 +69,12 @@ CriarConta::CriarConta(){
         case 1:    
           if (this->tipoDeConta==1){                                 //se a conta for corrente, será criado um objeto da classe corrente
             ContaCorrente* newContaCorrente = new ContaCorrente(numeroDaConta, saldo); //criando objeto
+            newContaCorrente->setTipoDeConta("Conta Corrente");
             bancoCentral.inserir(newContaCorrente);                                         //inserindo objeto no vetor de bancos
 
           }else if (this->tipoDeConta==2){                           //se a conta for poupança, será criado um objeto da classe poupança
             ContaPoupanca* newContaPoupanca = new ContaPoupanca(numeroDaConta, saldo); //criando objeto
+            newContaPoupanca->setTipoDeConta("Conta Poupanca");
             bancoCentral.inserir(newContaPoupanca);                                         //inserindo objeto no vetor de bancos
           }
                                                                                    
@@ -96,7 +117,7 @@ CriarConta::CriarConta(){
           system("CLS");
           break;
       }
-    } while (!this->confirmado1);  
+    };  
   } while (!this->finalizado); //enquanto n finalizar o programa clicando em "VOLTAR" na opt, ou clicando em "NÃO" na opt2, continua o loop
 
   system("CLS");

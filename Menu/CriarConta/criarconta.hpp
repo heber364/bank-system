@@ -27,6 +27,7 @@ public:
   void inserirDados(); 
   void confirmaDados();
   void setTipoDeConta();
+  void printValorInvalido();
 
 };
 

@@ -7,11 +7,9 @@ class ContaPoupanca: public ContaBancaria{
 public:
   ContaPoupanca(int _numeroDaConta, double _saldo);
   ~ContaPoupanca();
-
   void sacar(double _valor);
-  static int getNumeroDeContas();
-private:
-  static int numeroDeContas;
+  void mostrarDados() const;
+
   
 };  
 

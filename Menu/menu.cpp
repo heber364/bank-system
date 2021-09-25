@@ -17,11 +17,10 @@ Menu::Menu(){
 
   do{
     int opt;
-    std::cout << "====================================================================================" << std::endl;
-    std::cout << "================================ ESCOLHA UMA OPCAO =================================" << std::endl;
-    std::cout << "====================================================================================" << std::endl;
-    std::cout << " [ 1 ] Criar nova conta   [ 2 ] Selecionar Conta                                    " << std::endl;
-    std::cout << " [ 3 ] Remover Conta      [ 4 ] Gerar Relatorio do Banco  [ 0 ] Finalizar Aplicacao " << std::endl;
+    printBannerMenu();
+    // std::cout << "=====================================================================================================================" << std::endl;
+    std::cout << "    [ 1 ] CRIAR CONTA       [ 2 ] SELECIONAR CONTA        [ 3 ] REMOVER CONTA       [ 4 ] GERAR RELATORIO DO BANCO   \n" << std::endl;
+    std::cout << "    [ 0 ] Finalizar Aplicacao " << std::endl;
     std::cin >> opt;
     system("CLS");
     if (opt == 0){
@@ -29,15 +28,15 @@ Menu::Menu(){
       do{
        int opt2;
         std::cout << "DESEJA MESMO FINALIZAR A APLICACAO?"<< std::endl;
-        std::cout << "[ 1 ] NAO   [ 0 ] SIM " << std::endl;
+        std::cout << "[ 0 ] NAO   [ 1 ] SIM " << std::endl;
         std::cin >> opt2;
       
-        if (opt2 == 1){
+        if (opt2 == 0){
           std::cout << "Voltando ao menu " << std::endl;
           valorValido = true;
           system("PAUSE");
           system("CLS");
-        }else if(opt2 == 0){
+        }else if(opt2 == 1){
           std::cout << "Finalizando aplicacao..." << std::endl;
           valorValido = true;
           programaFinalizado = true;
@@ -51,26 +50,12 @@ Menu::Menu(){
       CriarConta _criarConta;
     }else if(opt == 2){
       SelecionarConta _selecionarConta;
-    }else{
+    }else if (opt == 3){
+      RemoverConta _removerConta;
+    }else{ 
       printValorInvalido();
     }
     
-      // case 1:
-        
-      //   break;
-      // case 2:
-      //   SelecionarConta _selecionarConta();
-      //   break;
-      // case 3:
-      // // RemoverConta _removerConta;
-      //   break;
-      // case 4:
-      //   //GerarRelatorio _gerarRelatorio();
-      //   break;
-      // case 0:
-      //   //finalizarPrograma();
-      // default:
-      //   break;
   
   } while (!programaFinalizado);
   
