@@ -1,7 +1,5 @@
-#include "selecionarconta.hpp"
 #include <iostream>
-
-
+#include "selecionarconta.hpp"
 
 ContaBancaria* contaSelecionada;
 ContaBancaria* contaSelecionada2;
@@ -18,7 +16,7 @@ void SelecionarConta::setContaSecundaria(){
   int numeroDaConta;
   std::cout << "Numero da conta que recebera a transferencia: " << std::endl;
   std::cin >> numeroDaConta;
-  contaSelecionada2 = bancoCentralprocurar(numeroDaConta);
+  contaSelecionada2 = bancoCentral.procurar(numeroDaConta);
 }
 
 
