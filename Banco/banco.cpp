@@ -18,7 +18,7 @@ void Banco::remover(ContaBancaria* _conta){
 ContaBancaria* Banco::procurar(int _numeroDaConta){
   for(int i = 0; i < ContasBancarias.size(); i++){
 		if(_numeroDaConta == ContasBancarias[i]->getNumeroDaConta()){
-			return(ContasBancarias[i]);
+			return ContasBancarias[i];
 		}
 	}
 	return(NULL);

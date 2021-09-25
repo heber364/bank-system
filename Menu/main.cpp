@@ -33,9 +33,8 @@ int main(){
 
 
 
-  // CriarConta criarConta("conta-corrente", &bancoCentral);
+  CriarConta criarConta("conta-corrente");
 
-  
 
   // std::cout << "Numero das contas: " << std::endl;
   // for (int i = 0; i < bancoCentral.ContasBancarias.size(); i++){
@@ -45,7 +44,8 @@ int main(){
   // c_aux[1] = bancoCentral.procurar(123);
 
   // std::cout << c_aux[1]->getSaldo();
- SelecionarConta selecionarConta();
+
+ SelecionarConta selecionarConta;
   
   return 0;
 }

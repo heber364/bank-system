@@ -22,7 +22,7 @@ void CriarConta::confirmaDados(){
   system("cls");
 }
 
-CriarConta::CriarConta(std::string _tipoDeConta, Banco* _banco):tipoDeConta(_tipoDeConta){ 
+CriarConta::CriarConta(std::string _tipoDeConta):tipoDeConta(_tipoDeConta){ 
   //loop 1
   do{
     this->confirmado1 = false;                                                       //defini confirmado1 como false, uma vez que n confirmamos nossa escolhe do item abaixo          
@@ -38,11 +38,11 @@ CriarConta::CriarConta(std::string _tipoDeConta, Banco* _banco):tipoDeConta(_tip
         case 1:    
           if (this->tipoDeConta=="conta-corrente"){                                 //se a conta for corrente, será criado um objeto da classe corrente
             ContaCorrente* newContaCorrente = new ContaCorrente(numeroDaConta, saldo); //criando objeto
-            _banco->inserir(newContaCorrente);                                         //inserindo objeto no vetor de bancos
+            bancoCentral.inserir(newContaCorrente);                                         //inserindo objeto no vetor de bancos
 
           }else if (this->tipoDeConta=="conta-poupanca"){                           //se a conta for poupança, será criado um objeto da classe poupança
             ContaPoupanca* newContaPoupanca = new ContaPoupanca(numeroDaConta, saldo); //criando objeto
-            _banco->inserir(newContaPoupanca);                                         //inserindo objeto no vetor de bancos
+            bancoCentral.inserir(newContaPoupanca);                                         //inserindo objeto no vetor de bancos
           }
                                                                                    
           std::cout << "Conta adicionada com sucesso!\n" << std::endl;

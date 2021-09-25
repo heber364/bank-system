@@ -1,8 +1,11 @@
 #ifndef CRIARCONTA_H
 #define CRIARCONTA_H
+
+#include "../../Banco/banco.hpp"
 #include "../../ContaCorrente/contacorrente.hpp"
 #include "../../ContaPoupanca/contapoupanca.hpp"
-#include "../../Banco/banco.hpp"
+
+#include "../menu.h"
 
 class CriarConta{
 private:
@@ -18,7 +21,7 @@ private:
   int opt2;
   
 public:
-  CriarConta(std::string _tipoDeConta, Banco*);
+  CriarConta(std::string _tipoDeConta);
   ~CriarConta();
   void inserirDados(); 
   void confirmaDados();
