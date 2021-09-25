@@ -1,5 +1,4 @@
 #include "banco.hpp"
-#include <vector>
 
 
 void Banco::inserir(ContaBancaria* _conta){
@@ -14,8 +13,6 @@ void Banco::remover(ContaBancaria* _conta){
       }
     }
 };
-
-//VERIFICAR ISSO COM ALGUM MONITOR
 
 ContaBancaria* Banco::procurar(int _numeroDaConta){
   for(int i = 0; i <= ContasBancarias.size(); i++)//Percorre o vetor de contas

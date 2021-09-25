@@ -9,7 +9,7 @@ public:
 
   virtual void sacar(double _valor);
   virtual void depositar(double _valor);
-  void transferir(double _valor, ContaBancaria* _conta);
+  void transferir(double _valor, ContaBancaria& _conta);
   
   std::string getTipoDeConta() const;
   double getSaldo() const; // TEMPORARIO PARA TESTE

@@ -19,14 +19,12 @@ void ContaBancaria::depositar(double _valor){
 }
 
 //metodo de tranferir
-void ContaBancaria::transferir(double _valor, ContaBancaria* _conta){
+void ContaBancaria::transferir(double _valor, ContaBancaria& _conta){
   if(_valor > this->saldo){                  //SE O VALOR DE TRANFERENCIA FOR MAIOR, DÁ ERRO
     std::cout << "Valor de transferencia maior que o saldo em conta!" << std::endl;
-  }else if(_conta == NULL){  //SE NÃO ENCONTRAR A CONTA, TB DÁ ERRO
-    std::cout << "Conta a receber tranferencia nao encontrada" << std::endl;
   }else{
     this->saldo = this->saldo - _valor;
-    _conta->saldo = _conta->saldo + _valor; 
+    _conta.saldo = _conta.saldo + _valor; 
   }
 }
 

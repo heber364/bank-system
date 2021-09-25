@@ -51,12 +51,19 @@ int main(){
   // heber2.getSaldo();
 
   // bancoCentral.getContasBancarias()[0].sacar(20);
-  // std::cout << "Saldo anterior: " <<heber2.getSaldo() << std::endl; 
+  std::cout << "Saldo anterior: " << heber2.getSaldo() << std::endl; 
   c_aux[1] = bancoCentral.procurar(123);
+
+  if (c_aux[1]){
+    std::cout << "Saldo atual:" << c_aux[1]->getSaldo() << std::endl; 
+  }else{
+    std::cout << "Conta n encontrada" << std::endl;
+  }
+  
   
   
 
-  std::cout << "Saldo atual:" << c_aux[1]->getSaldo() << std::endl; 
+  
 
   // (bancoCentral.getContasBancarias()[1]).sacar(50.00);
   // std::cout << "Saldo anterior: " <<bancoCentral.getContasBancarias()[1].getSaldo() << std::endl; 

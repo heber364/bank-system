@@ -8,14 +8,12 @@
 
 class Banco{
 public:
-  std::vector<ContaBancaria*> ContasBancarias;
   void inserir(ContaBancaria*);
   void remover(ContaBancaria*);
   ContaBancaria* procurar(int);
 
 private:
-  
-
+  std::vector<ContaBancaria*> ContasBancarias;
 };  
 
 
