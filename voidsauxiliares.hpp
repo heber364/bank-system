@@ -38,5 +38,32 @@ void printValorInvalido(){
   system("CLS");
 }
 
+void printBannerConta(){   
+  std::cout<< "=======================================================================================================================" << std::endl;
+  std::cout<< "=======================================================================================================================\n" << std::endl; 
+
+  std::cout<< "       CCCCCCCCCCCCC     OOOOOOOOO     NNNNNNNN        NNNNNNNNTTTTTTTTTTTTTTTTTTTTTTT               AAA               " << std::endl;
+  std::cout<< "    CCC::::::::::::C   OO:::::::::OO   N:::::::N       N::::::NT:::::::::::::::::::::T              A:::A              " << std::endl;
+  std::cout<< " CC:::::::::::::::C OO:::::::::::::OO N::::::::N      N::::::NT:::::::::::::::::::::T              A:::::A             " << std::endl; 
+  std::cout<< " C:::::CCCCCCCC::::CO:::::::OOO:::::::ON:::::::::N     N::::::NT:::::TT:::::::TT:::::T            A:::::::A            " << std::endl; 
+  std::cout<< "C:::::C       CCCCCCO::::::O   O::::::ON::::::::::N    N::::::NTTTTTT  T:::::T  TTTTTT           A:::::::::A           " << std::endl;
+  std::cout<< "C:::::C              O:::::O     O:::::ON:::::::::::N   N::::::N        T:::::T                 A:::::A:::::A          " << std::endl; 
+  std::cout<< "C:::::C              O:::::O     O:::::ON:::::::N::::N  N::::::N        T:::::T                A:::::A A:::::A         " << std::endl; 
+  std::cout<< "C:::::C              O:::::O     O:::::ON::::::N N::::N N::::::N        T:::::T               A:::::A   A:::::A        " << std::endl; 
+  std::cout<< "C:::::C              O:::::O     O:::::ON::::::N  N::::N:::::::N        T:::::T              A:::::A     A:::::A       " << std::endl; 
+  std::cout<< "C:::::C              O:::::O     O:::::ON::::::N   N:::::::::::N        T:::::T             A:::::AAAAAAAAA:::::A      " << std::endl; 
+  std::cout<< "C:::::C              O:::::O     O:::::ON::::::N    N::::::::::N        T:::::T            A:::::::::::::::::::::A     " << std::endl; 
+  std::cout<< "C:::::C       CCCCCCO::::::O   O::::::ON::::::N     N:::::::::N        T:::::T            A:::::AAAAAAAAAAAAA:::::A    " << std::endl;
+  std::cout<< " C:::::CCCCCCCC::::CO:::::::OOO:::::::ON::::::N      N::::::::N      TT:::::::TT         A:::::A             A:::::A   " << std::endl;
+  std::cout<< " CC:::::::::::::::C OO:::::::::::::OO N::::::N       N:::::::N       T:::::::::T        A:::::A               A:::::A  " << std::endl;
+  std::cout<< "    CCC::::::::::::C   OO:::::::::OO   N::::::N        N::::::N      T:::::::::T       A:::::A                 A:::::A " << std::endl;
+  std::cout<< "       CCCCCCCCCCCCC     OOOOOOOOO     NNNNNNNN         NNNNNNN      TTTTTTTTTTT      AAAAAAA                   AAAAAAA" << std::endl;
+  
+  std::cout<< "=======================================================================================================================" << std::endl;
+  std::cout<< "============================================      SELECIONE UMA OPCAO      ============================================" << std::endl;
+  std::cout<< "=======================================================================================================================\n" << std::endl;                                                                                                                     
+                                                                                                                        
+                                                                                                                        
+}
 #endif // !VOIDSAUXILIARES_H
 

@@ -18,9 +18,7 @@ void SelecionarConta::setContaSecundaria(){
 
 
 void SelecionarConta::menu(){
-  std::cout << "-------------------------------------------------------------------"<< std::endl;
-  std::cout << "---------------------------MENU DA CONTA---------------------------"<< std::endl;
-  std::cout << "------------------------------------------------------------------"<< std::endl;
+  printBannerConta();
   std::cout << "[ 1 ] Depositar [ 2 ] Sacar [ 3 ] Transferir [ 4 ] Gerar Relatorio"<< std::endl;
   std::cout << "[ 5 ] Selecionar outra conta [ 0 ] Voltar ao Menu Principal "<< std::endl;
   std::cin >> opt;
