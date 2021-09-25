@@ -2,7 +2,15 @@
 #include <iostream>
 #include <string>
 
+void CriarConta::setTipoDeConta(){
+  do{
+    std::cout << "Selecione o tipo de conta: " << std::endl;
+    std::cout << "[ 1 ] Conta Corrente [ 2 ] Conta Poupanca [ 0 ] Voltar" << std::endl;
+    std::cin >> this->tipoDeConta;
+  } while (tipoDeConta != 1 && tipoDeConta != 2 && tipoDeConta != 0);
+  
 
+};
 
 void CriarConta::inserirDados(){
   std::cout << "Qual numero da sua nova conta: ";
@@ -13,19 +21,23 @@ void CriarConta::inserirDados(){
 };
 
 void CriarConta::confirmaDados(){
+  std::string _tipoDeConta = (this->tipoDeConta==1) ?  "Conta Corrente" : "Conta Poupanca" ;
+
   std::cout << "---------------------------------------------"<<std::endl;
   std::cout << "Confima os dados? [0] NAO [1] SIM [2] Voltar" << std::endl;
   std::cout << "---------------------------------------------"<<std::endl;
+  std::cout << "Tipo de conta: " << _tipoDeConta  << std::endl;
   std::cout << "Numero da conta: " << numeroDaConta << std::endl;
   std::cout << "Saldo Inicial: " << saldo << std::endl;
   std::cin >> this->opt;
   system("cls");
 }
 
-CriarConta::CriarConta(std::string _tipoDeConta):tipoDeConta(_tipoDeConta){ 
+CriarConta::CriarConta(){ 
   //loop 1
   do{
     this->confirmado1 = false;                                                       //defini confirmado1 como false, uma vez que n confirmamos nossa escolhe do item abaixo          
+    setTipoDeConta(); // função para inserir o tipo de conta
     inserirDados(); //função para inserir dados da nova conta
     //loop2
     do{
@@ -36,11 +48,11 @@ CriarConta::CriarConta(std::string _tipoDeConta):tipoDeConta(_tipoDeConta){
           this->confirmado1 = true;
           break;
         case 1:    
-          if (this->tipoDeConta=="conta-corrente"){                                 //se a conta for corrente, será criado um objeto da classe corrente
+          if (this->tipoDeConta==1){                                 //se a conta for corrente, será criado um objeto da classe corrente
             ContaCorrente* newContaCorrente = new ContaCorrente(numeroDaConta, saldo); //criando objeto
             bancoCentral.inserir(newContaCorrente);                                         //inserindo objeto no vetor de bancos
 
-          }else if (this->tipoDeConta=="conta-poupanca"){                           //se a conta for poupança, será criado um objeto da classe poupança
+          }else if (this->tipoDeConta==2){                           //se a conta for poupança, será criado um objeto da classe poupança
             ContaPoupanca* newContaPoupanca = new ContaPoupanca(numeroDaConta, saldo); //criando objeto
             bancoCentral.inserir(newContaPoupanca);                                         //inserindo objeto no vetor de bancos
           }

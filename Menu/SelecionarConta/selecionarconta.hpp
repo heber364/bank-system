@@ -5,11 +5,13 @@
 #include "../../Relatorio/relatorio.hpp"
 #include "../../Imprimivel/imprimivel.hpp"
 
-#include "../menu.hpp"
+#include "../../Banco/bancoCentral.hpp"
 
 
 class SelecionarConta{
 private:
+  ContaBancaria* contaSelecionada;
+  ContaBancaria* contaSelecionada2;
 
   int opt;
   bool escolherOutraConta = false;

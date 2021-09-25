@@ -5,13 +5,14 @@
 #include "../../ContaCorrente/contacorrente.hpp"
 #include "../../ContaPoupanca/contapoupanca.hpp"
 
-#include "../menu.hpp"
+#include "../../Banco/bancoCentral.hpp"
 
 class CriarConta{
 private:
-  std::string tipoDeConta;
-  std::string NomeDoUsuario;
 
+  int tipoDeConta;
+  std::string NomeDoUsuario;
+    
   int numeroDaConta;
   double saldo;
   bool finalizado = false;
@@ -21,10 +22,11 @@ private:
   int opt2;
   
 public:
-  CriarConta(std::string _tipoDeConta);
+  CriarConta();
   ~CriarConta();
   void inserirDados(); 
   void confirmaDados();
+  void setTipoDeConta();
 
 };
 

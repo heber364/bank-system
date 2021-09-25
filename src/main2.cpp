@@ -23,29 +23,18 @@
 #include "../Relatorio/relatorio.hpp"
 #include "../Relatorio/relatorio.cpp"
 
-#include "CriarConta/criarconta.hpp"
-#include "CriarConta/criarconta.cpp"
+#include "../Menu/CriarConta/criarconta.hpp"
+#include "../Menu/CriarConta/criarconta.cpp"
 
-#include "SelecionarConta/selecionarconta.hpp"
-#include "SelecionarConta/selecionarconta.cpp"
+#include "../Menu/SelecionarConta/selecionarconta.hpp"
+#include "../Menu/SelecionarConta/selecionarconta.cpp"
+
+#include "../Menu/menu.hpp"
+#include "../Menu/menu.cpp"
 
 int main(){
-
-
-
-  CriarConta criarConta("conta-corrente");
-
-
-  // std::cout << "Numero das contas: " << std::endl;
-  // for (int i = 0; i < bancoCentral.ContasBancarias.size(); i++){
-  //   std::cout << bancoCentral.ContasBancarias[i]->getNumeroDaConta() << std::endl;
-  // }
   
-  // c_aux[1] = bancoCentral.procurar(123);
-
-  // std::cout << c_aux[1]->getSaldo();
-
- SelecionarConta selecionarConta;
+  Menu _menu;
   
   return 0;
 }

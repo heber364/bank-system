@@ -1,8 +1,7 @@
 #include <iostream>
 #include "selecionarconta.hpp"
 
-ContaBancaria* contaSelecionada;
-ContaBancaria* contaSelecionada2;
+
 
 void SelecionarConta::setContaPrincipal(){
   int numeroDaConta;
@@ -21,9 +20,9 @@ void SelecionarConta::setContaSecundaria(){
 
 
 void SelecionarConta::menu(){
-  std::cout << "---------------------------------"<< std::endl;
-  std::cout << "----------MENU DA CONTA----------"<< std::endl;
-  std::cout << "---------------------------------"<< std::endl;
+  std::cout << "-------------------------------------------------------------------"<< std::endl;
+  std::cout << "---------------------------MENU DA CONTA---------------------------"<< std::endl;
+  std::cout << "------------------------------------------------------------------"<< std::endl;
   std::cout << "[ 1 ] Depositar [ 2 ] Sacar [ 3 ] Transferir [ 4 ] Gerar Relatorio"<< std::endl;
   std::cout << "[ 5 ] Selecionar outra conta [ 0 ] Voltar ao Menu Principal "<< std::endl;
   std::cin >> opt;
@@ -76,13 +75,6 @@ void SelecionarConta::opcoesDoMenu(){
 
 
 SelecionarConta::SelecionarConta(){
-
-  // ContaCorrente* heber = new ContaCorrente(123, 100);
-  // ContaPoupanca* heber2 = new ContaPoupanca(321, 250);
-  
-  // bancoCentral.inserir(heber);
-  // bancoCentral.inserir(heber2);
-  // contaSelecionada = bancoCentral.procurar(123);
 
   do{
     setContaPrincipal();
