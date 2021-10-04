@@ -45,6 +45,8 @@ void SelecionarConta::opcoesDoMenu(){
         std::cout << "Valor do saque: ";
         std::cin >> valorDeSaque;  
         contaSelecionada->sacar(valorDeSaque);
+        system("PAUSE");
+        system("cls");
         break;
       case 3:
         double valorDeTransferencia;
