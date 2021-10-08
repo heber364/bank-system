@@ -11,7 +11,13 @@ void ContaBancaria::transferir(double _valor, ContaBancaria& _conta){
     std::cout << "Valor de transferencia maior que o saldo em conta!" << std::endl;
   }else{
     this->saldo = this->saldo - _valor;
-    _conta.saldo = _conta.saldo + _valor; 
+    _conta.saldo = _conta.saldo + _valor;
+    std::cout << "Transferencia de R$" << _valor << " realizada com sucesso!"                                        << std::endl;
+    std::cout << "====================================="                                                             << std::endl;
+    std::cout << "Conta remetente: " << this->numeroDaConta << "Conta destinataria: " << _conta.getNumeroDaConta()   << std::endl;
+    std::cout << "Saldo atual:     " << this->saldo                                                                  << std::endl;
+    std::cout << "====================================="                                                             << std::endl; 
+
   }
 }
 
