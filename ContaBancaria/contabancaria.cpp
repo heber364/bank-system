@@ -38,12 +38,6 @@ std::string ContaBancaria::getTipoDeConta() const{
 }
 
 
-//metodo que seta o tipo de conta
-void ContaBancaria::setTipoDeConta(std::string _tipoDeConta){
-  this->TipoDeConta = _tipoDeConta;
-}
-
-
 //metodo que retorna o saldo
 double ContaBancaria::getSaldo() const{
   return this->saldo;
