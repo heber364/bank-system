@@ -6,68 +6,110 @@ ContaPoupanca::ContaPoupanca(int _numeroDaConta, double _saldo): ContaBancaria( 
   this->TipoDeConta = "Conta Poupanca";
 }; 
 
-
-//metodo sacar
 void ContaPoupanca::sacar(double _valor){
-    //se o valor a ser sacado for maior q o limite e o saldo junto, n executa o saque
-  if (_valor < 0){
-    std::cout << "O valor nao pode ser negativo! Favor, tente novamente" << std::endl;
-  }else{
-
-    //se o saldo ja estiver negativo
-    if(this->saldo < 0){
-      //se o valor é maior que 
-      if(_valor > this->limite){
-        std::cout << "Seu saldo já esta negativo e o valor e maior que o limite diponivel! " << std::endl;
-        //se o valor a ser sacado for menor ou igual ao saldo, apenas o saldo será alterado
-      }else if(_valor <= this->saldo){      
-        this->saldo = this->saldo - _valor;
-        //se o valor a ser sacado for maior que o saldo, a conta ficara com saldo negativo, e o valor que ultrapassar o saldo, o restante será descontado do limite
-      }else if(_valor > this->saldo){       
-        double saldoAnterior = this->saldo;
-        this->saldo = this->saldo - _valor;
-        _valor  = _valor - saldoAnterior;
-        this->limite = this->limite - _valor;
-    
-    //se o saldo não estiver negativo
-    }else{
-      //se o valor é maior que o saldo e o limite juntos
-      if(_valor > this->saldo + this->limite){
-        std::cout << "Valor de saque maior que o saldo e limite juntos!" << std::endl;
-        //se o valor a ser sacado for menor ou igual ao saldo, apenas o saldo será alterado
-      }else if(_valor <= this->saldo){      
-        this->saldo = this->saldo - _valor;
-        //se o valor a ser sacado for maior que o saldo, a conta ficara com saldo negativo, e o valor que ultrapassar o saldo, o restante será descontado do limite
-      }else if(_valor > this->saldo){       
-        double saldoAnterior = this->saldo;
-        this->saldo = this->saldo - _valor;
-        _valor  = _valor - saldoAnterior;
-        this->limite = this->limite - _valor;
-      } 
-    }
-     
-  }
   
+  //verifica se o saldo não é negativo
+  if (this->saldo >= 0){
+    //verifica o valor sacado é menor ou igual ao valor do saldo mais o limite
+    if (this->saldo + this->limite >= _valor){
+      //verifica se só o saldo já é o suficiente para realizar o saque
+      if (this->saldo >= _valor){
+        this->saldo -= _valor;
+        std::cout << "Saque de R$" << _valor << " realizado com sucesso!" << std::endl;
+        std::cout << "====================================="              << std::endl;
+        std::cout << "Saldo atual:    " << this->saldo                    << std::endl;
+        std::cout << "Limite atual:   " << this->limite                   << std::endl;
+        std::cout << "====================================="              << std::endl;
+        system("pause");
+        system("cls");
+      //se o saldo n for suficiente, descontará uma parte do limite
+      }else{
+        this->limite -=  (_valor - this->saldo);
+        this->saldo -= _valor;
+        std::cout << "Saque de R$" << _valor << " realizado com sucesso!" << std::endl;
+        std::cout << "====================================="              << std::endl;
+        std::cout << "Saldo atual:    " << this->saldo                    << std::endl;
+        std::cout << "Limite atual:   " << this->limite                   << std::endl;
+        std::cout << "====================================="              << std::endl;
+        system("pause");
+        system("cls");
+      }
+    //caso o saldo e o limite juntos seja menor que o valor de saque 
+    }else{
+        std::cout << "ERRO!! Saque maior que limite e saldo juntos"               << std::endl;
+        std::cout << "============================================"               << std::endl;
+        std::cout << "(Saldo + limite) atual:    " << this->saldo + this->limite  << std::endl;
+        std::cout << "Valor requerido:           " << _valor                      << std::endl;
+        std::cout << "============================================"               << std::endl;
+        system("pause");
+        system("cls");
+    }
+  //caso o saldo já esteja negativo  
+  }else{
+    //caso o limite disponivel seja menor que o valor de saque requerido
+    if (this->limite < _valor){
+      std::cout << "ERRO!! Saque maior que limite disponivel!"    << std::endl;
+      std::cout << "OBS.: Seu saldo esta negativo"                << std::endl;
+      std::cout << "============================================" << std::endl;
+      std::cout << "Limite atual:       " << this->limite         << std::endl;
+      std::cout << "Valor requerido:    " << _valor               << std::endl;
+      std::cout << "============================================" << std::endl;
+      system("pause");
+      system("cls");
+    //caso o limite disponivel não seja menor que o valor de saque requerido
+    }else{
+      this->limite -= _valor;
+      this->saldo -= _valor;
+        std::cout << "Saque de R$" << _valor << " realizado com sucesso!" << std::endl;
+        std::cout << "====================================="              << std::endl;
+        std::cout << "Saldo atual:    " << this->saldo                    << std::endl;
+        std::cout << "Limite atual:   " << this->limite                   << std::endl;
+        std::cout << "====================================="              << std::endl;
+        system("pause");
+        system("cls");
+    } 
+  }
 }
-}
-
 
 //metodo de depositar
 void ContaPoupanca::depositar(double _valor){
-  //se o saldo for positivo, acrescenta o valor sacado direto na conbta
-  if (this->saldo >= 0){
-    this->saldo = this->saldo + _valor;
+  
+  //verifica se o saldo esta negativo
+  if(this->saldo < 0){
+    //se o saldo, mais o valor depositado, continuar negativo, faz...
+    if (this->saldo + _valor < 0){
+      this->saldo += _valor;
+      this->limite += _valor;
+        std::cout << "Deposito de R$" << _valor << " realizado com sucesso!" << std::endl;
+        std::cout << "====================================="                 << std::endl;
+        std::cout << "Saldo atual:    " << this->saldo                       << std::endl;
+        std::cout << "Limite atual:   " << this->limite                      << std::endl;
+        std::cout << "====================================="                 << std::endl;
+        system("pause");
+        system("cls");
+    //se o saldo, mais o valor deposito, ficar positivo, faz...
+    }else{
+      this->saldo += _valor;
+      this->limite = 1000;
+      std::cout << "Deposito de R$" << _valor << " realizado com sucesso!" << std::endl;
+      std::cout << "====================================="                 << std::endl;
+      std::cout << "Saldo atual:    " << this->saldo                       << std::endl;
+      std::cout << "Limite atual:   " << this->limite                      << std::endl;
+      std::cout << "====================================="                 << std::endl;
+      system("pause");
+      system("cls");
+    } 
   }else{
-      //se o valor depositado + o limite disponível for menor que ou igual a zero 1000, significa que ele ainda ficará com saldo negativo, ou, no máximo,  igual a zero
-      if(_valor + this->limite <=1000){
-        this->limite = this->limite + _valor;
-        this->saldo = this->saldo + _valor;
-      //se o valor depositado for suficiente para tirar o saldo do negativo, o limite voltará a ser 1000 reais, e o saldo será positivo novamente
-      }else if(_valor + this->limite > 1000){
-        this->saldo = this->saldo + _valor;
-        this->limite = 1000;
-      }
+    this->saldo+= _valor;
+    std::cout << "Deposito de R$" << _valor << " realizado com sucesso!" << std::endl;
+    std::cout << "====================================="                 << std::endl;
+    std::cout << "Saldo atual:    " << this->saldo                       << std::endl;
+    std::cout << "Limite atual:   " << this->limite                      << std::endl;
+    std::cout << "====================================="                 << std::endl;
+    system("pause");
+    system("cls");
   }
+
 }
 
 //metodo que retorna o saldo
@@ -78,11 +120,10 @@ double ContaPoupanca::getLimite() const{
 
 //metodo de mostrar dados
 void ContaPoupanca::mostrarDados() const{
-  std::cout << "==========================================" << std::endl;
-  std::cout << "Tipo de conta:   " << this->getTipoDeConta() << std::endl;
-  std::cout << "Numero da conta: " << this->getNumeroDaConta() << std::endl;
-  std::cout << "Saldo:           " << this->getSaldo() << std::endl;
-  std::cout << "Limite:          " << this->getLimite() << std::endl;
-  std::cout << "==========================================" << std::endl;
-
+  std::cout << "=========================================="     << std::endl;
+  std::cout << "Tipo de conta:   " << this->getTipoDeConta()    << std::endl;
+  std::cout << "Numero da conta: " << this->getNumeroDaConta()  << std::endl;
+  std::cout << "Saldo:           " << this->getSaldo()          << std::endl;
+  std::cout << "Limite:          " << this->getLimite()         << std::endl;
+  std::cout << "=========================================="     << std::endl;
 }

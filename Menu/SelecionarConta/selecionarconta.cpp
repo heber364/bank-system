@@ -34,19 +34,18 @@ void SelecionarConta::opcoesDoMenu(){
         system("CLS");
         break;
       case 1:
+        system("CLS");
         double valorDeDeposito;
         std::cout << "Valor do deposito: ";
         std::cin >> valorDeDeposito;
         contaSelecionada->depositar(valorDeDeposito);
-        system("CLS");
         break;
       case 2:
+        system("CLS");
         double valorDeSaque;
         std::cout << "Valor do saque: ";
         std::cin >> valorDeSaque;  
         contaSelecionada->sacar(valorDeSaque);
-        system("PAUSE");
-        system("cls");
         break;
       case 3:
         double valorDeTransferencia;
