@@ -33,6 +33,11 @@ void ContaPoupanca::depositar(double _valor){
   this->saldo = this->saldo + _valor;
 }
 
+//metodo que retorna o saldo
+double ContaPoupanca::getLimite() const{
+  return this->limite;
+}
+
 
 //metodo de mostrar dados
 void ContaPoupanca::mostrarDados(){

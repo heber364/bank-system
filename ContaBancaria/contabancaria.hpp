@@ -13,7 +13,7 @@ public:
   
   int getNumeroDaConta() const;
   double getSaldo() const; 
-  double getLimite() const;
+
   std::string getTipoDeConta() const;
   void setTipoDeConta(std::string _tipoDeConta);
 
@@ -23,7 +23,7 @@ protected:
   std::string TipoDeConta;
   int numeroDaConta;
   double saldo;
-  double limite;
+
 
 };
 

@@ -35,7 +35,7 @@ void Banco::mostrarDados(){
       std::cout << "Tipo de conta:   " << this->ContasBancarias[i]->getTipoDeConta() << std::endl;
       std::cout << "Numero da conta: " << this->ContasBancarias[i]->getNumeroDaConta() << std::endl;
       std::cout << "Saldo:           " << this->ContasBancarias[i]->getSaldo() << std::endl;
-      this->ContasBancarias[i]->getTipoDeConta() == "Conta Poupanca" ? (std::cout <<"Limite:          " <<  this->ContasBancarias[i]->getLimite() << std::endl) : (std::cout);
+      // this->ContasBancarias[i]->getTipoDeConta() == "Conta Poupanca" ? (std::cout <<"Limite:          " <<  this->ContasBancarias[i]->getLimite() << std::endl) : (std::cout);
       std::cout << "==========================================\n" << std::endl;   
     }
   }

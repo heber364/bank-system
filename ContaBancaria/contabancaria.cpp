@@ -28,11 +28,6 @@ double ContaBancaria::getSaldo() const{
 }
 
 
-//metodo que retorna o saldo
-double ContaBancaria::getLimite() const{
-  return this->limite;
-}
-
 
 //metodo que seta o tipo de conta
 void ContaBancaria::setTipoDeConta(std::string _tipoDeConta){
@@ -46,7 +41,7 @@ void ContaBancaria::mostrarDados(){
   std::cout << "Tipo de conta:   " << this->getTipoDeConta() << std::endl;
   std::cout << "Numero da conta: " << this->getNumeroDaConta() << std::endl;
   std::cout << "Saldo:           " << this->getSaldo() << std::endl;             
-  this->getTipoDeConta() == "Conta Poupanca" ? (std::cout <<"Limite:         " <<  this->getLimite() << std::endl) : (std::cout);
+  // this->getTipoDeConta() == "Conta Poupanca" ? (std::cout <<"Limite:         " <<  this->getLimite() << std::endl) : (std::cout);
   std::cout << "==========================================" << std::endl;
 }
 

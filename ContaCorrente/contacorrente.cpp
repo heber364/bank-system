@@ -4,7 +4,6 @@
 //construtor
 ContaCorrente::ContaCorrente(int _numeroDaConta, double _saldo) : ContaBancaria( _numeroDaConta, _saldo){
   this->TipoDeConta = "Conta Corrente";
-  this->limite = 0;
 }; 
 
 
@@ -31,5 +30,4 @@ void ContaCorrente::mostrarDados(){
   std::cout << "Numero da conta: " << this->getNumeroDaConta() << std::endl;
   std::cout << "Saldo:           " << this->getSaldo() << std::endl;
   std::cout << "==========================================" << std::endl;
-
 }
