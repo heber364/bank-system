@@ -8,7 +8,6 @@ void SelecionarConta::setContaPrincipal(){
   contaSelecionada = bancoCentral.procurar(numeroDaConta);
 }
 
-
 void SelecionarConta::setContaSecundaria(){
   int numeroDaConta;
   std::cout << "Numero da conta que recebera a transferencia: " << std::endl;
@@ -16,14 +15,13 @@ void SelecionarConta::setContaSecundaria(){
   contaSelecionada2 = bancoCentral.procurar(numeroDaConta);
 }
 
-
 void SelecionarConta::menu(){
   printBannerConta();
-  std::cout << "[ 1 ] Depositar [ 2 ] Sacar [ 3 ] Transferir [ 4 ] Gerar Relatorio"<< std::endl;
-  std::cout << "[ 5 ] Selecionar outra conta [ 0 ] Voltar ao Menu Principal "<< std::endl;
+  std::cout << "    [ 1 ] Depositar               [ 2 ] Sacar               [ 3 ] Transferir               [ 4 ] Gerar Relatorio   \n" << std::endl;
+  std::cout << "    [ 5 ] Selecionar outra conta  [ 0 ] Voltar ao Menu Principal " << std::endl;
+
   std::cin >> opt;
 }
-
 
 void SelecionarConta::opcoesDoMenu(){
   do{
@@ -39,6 +37,7 @@ void SelecionarConta::opcoesDoMenu(){
         std::cout << "Valor do deposito: ";
         std::cin >> valorDeDeposito;
         contaSelecionada->depositar(valorDeDeposito);
+        system("CLS");
         break;
       case 2:
         double valorDeSaque;
@@ -76,7 +75,7 @@ void SelecionarConta::opcoesDoMenu(){
         }
       case 4:
         system("CLS");
-        contaSelecionada->mostrarDados();
+        contaSelecionada->imprimeDados();
         system("PAUSE");
         system("CLS");
         break;

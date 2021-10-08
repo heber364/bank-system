@@ -1,16 +1,15 @@
 #ifndef CONTACORRENTE_H
 #define CONTACORRENTE_H
 #include "../ContaBancaria/contabancaria.hpp"
+#include "../Imprimivel/imprimivel.hpp"
 
-
-class ContaCorrente:  public ContaBancaria{
+class ContaCorrente:  public ContaBancaria, public Imprimivel{
 public:
   ContaCorrente(int _numeroDaConta, double _saldo); 
-  ~ContaCorrente();
 
   void sacar(double _valor);
   void depositar(double _valor);
-  void mostrarDados() const;
+  void mostrarDados();
   
 private:
   double taxaDeOperacao = 0.01;

@@ -50,23 +50,22 @@ double ContaBancaria::getSaldo() const{
 }
 
 
-//metodo virtual que mostra os dados da conta
-void ContaBancaria::mostrarDados() const{};
-
-
 //metodo que retorna o saldo
 double ContaBancaria::getLimite() const{
   return this->limite;
 }
 
+//metodo virtual que mostra os dados da conta
+void ContaBancaria::imprimeDados(){
+  std::cout << "==========================================" << std::endl;
+  std::cout << "Tipo de conta:   " << this->getTipoDeConta() << std::endl;
+  std::cout << "Numero da conta: " << this->getNumeroDaConta() << std::endl;
+  std::cout << "Saldo:           " << this->getSaldo() << std::endl;             
+  this->getTipoDeConta() == "Conta Poupanca" ? (std::cout <<"Limite:         " <<  this->getLimite() << std::endl) : (std::cout);
+  std::cout << "==========================================" << std::endl;
+}
 
 //metodo que retornar o numero da conta
 int ContaBancaria::getNumeroDaConta() const{
   return this->numeroDaConta;
-};
-
-
-//destrutor
-ContaBancaria::~ContaBancaria(){
-  
 };

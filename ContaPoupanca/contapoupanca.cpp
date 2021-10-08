@@ -7,6 +7,7 @@ ContaPoupanca::ContaPoupanca(int _numeroDaConta, double _saldo): ContaBancaria( 
   this->limite = 1000.00;
 }; 
 
+
 //metodo sacar
 void ContaPoupanca::sacar(double _valor){
     //se o valor a ser sacado for maior q o limite e o saldo junto, n executa o saque
@@ -26,8 +27,9 @@ void ContaPoupanca::sacar(double _valor){
   }
 }
 
+
 //metodo de mostrar dados
-void ContaPoupanca::mostrarDados() const{
+void ContaPoupanca::mostrarDados(){
   std::cout << "==========================================" << std::endl;
   std::cout << "Tipo de conta:   " << this->getTipoDeConta() << std::endl;
   std::cout << "Numero da conta: " << this->getNumeroDaConta() << std::endl;
@@ -36,5 +38,3 @@ void ContaPoupanca::mostrarDados() const{
   std::cout << "==========================================" << std::endl;
 
 }
-//destrutor
-ContaPoupanca::~ContaPoupanca(){}; 

@@ -1,5 +1,5 @@
 #include "relatorio.hpp"
 
-void Relatorio::gerarRelatorio(Imprimivel* _imprimivel){
-  _imprimivel->mostrarDados();
+void Relatorio::gerarRelatorio(Imprimivel& _objImprimivel){
+  _objImprimivel.mostrarDados();
 }
