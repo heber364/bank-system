@@ -28,6 +28,12 @@ void ContaPoupanca::sacar(double _valor){
 }
 
 
+//metodo de depositar
+void ContaPoupanca::depositar(double _valor){
+  this->saldo = this->saldo + _valor;
+}
+
+
 //metodo de mostrar dados
 void ContaPoupanca::mostrarDados(){
   std::cout << "==========================================" << std::endl;

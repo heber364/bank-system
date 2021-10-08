@@ -5,22 +5,6 @@
 ContaBancaria::ContaBancaria(int _numeroDaConta, double _saldo):numeroDaConta(_numeroDaConta), saldo(_saldo){};
 
 
-//metodo de sacar
-void ContaBancaria::sacar(double _valor){
-  if(_valor > this->saldo){
-    std::cout << "Valor de saque maior que o saldo!" << std::endl;
-  }else{
-    this->saldo = this->saldo - _valor;
-  }
-}
-
-
-//metodo de depositar
-void ContaBancaria::depositar(double _valor){
-  this->saldo = this->saldo + _valor;
-}
-
-
 //metodo de tranferir
 void ContaBancaria::transferir(double _valor, ContaBancaria& _conta){
   if(_valor > this->saldo){                  //SE O VALOR DE TRANFERENCIA FOR MAIOR, DÁ ERRO

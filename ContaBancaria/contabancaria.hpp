@@ -7,8 +7,8 @@ class ContaBancaria:public Imprimivel{
 public:
   ContaBancaria(int _numeroDaConta, double _saldo);
 
-  virtual void sacar(double _valor);
-  virtual void depositar(double _valor);
+  virtual void sacar(double _valor) = 0;
+  virtual void depositar(double _valor) = 0;
   void transferir(double _valor, ContaBancaria& _conta);
   
   int getNumeroDaConta() const;

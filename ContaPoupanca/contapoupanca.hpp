@@ -8,6 +8,7 @@ public:
 
   ContaPoupanca(int _numeroDaConta, double _saldo);
   void sacar(double _valor);
+  void depositar(double _valor);
   void mostrarDados();
 };  
 
