@@ -21,7 +21,7 @@ ContaBancaria* Banco::procurar(int _numeroDaConta){
 			return this->ContasBancarias[i];
 		}
 	}
-	return(NULL);
+	return NULL;
 };
 
 void Banco::mostrarDados(){
