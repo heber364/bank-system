@@ -13,10 +13,12 @@ void ContaPoupanca::sacar(double _valor){
   if (_valor < 0){
     std::cout << "O valor nao pode ser negativo! Favor, tente novamente" << std::endl;
   }else{
+
+    //se o saldo ja estiver negativo
     if(this->saldo < 0){
-      //se o valor é maior que limite juntos
+      //se o valor é maior que 
       if(_valor > this->limite){
-        std::cout << "Valor de saque maior que limite! Seu saldo já está negativo" << std::endl;
+        std::cout << "Seu saldo já esta negativo e o valor e maior que o limite diponivel! " << std::endl;
         //se o valor a ser sacado for menor ou igual ao saldo, apenas o saldo será alterado
       }else if(_valor <= this->saldo){      
         this->saldo = this->saldo - _valor;
@@ -26,6 +28,8 @@ void ContaPoupanca::sacar(double _valor){
         this->saldo = this->saldo - _valor;
         _valor  = _valor - saldoAnterior;
         this->limite = this->limite - _valor;
+    
+    //se o saldo não estiver negativo
     }else{
       //se o valor é maior que o saldo e o limite juntos
       if(_valor > this->saldo + this->limite){
@@ -44,7 +48,7 @@ void ContaPoupanca::sacar(double _valor){
      
   }
   
-  
+}
 }
 
 
