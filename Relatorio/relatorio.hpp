@@ -6,6 +6,6 @@
 
 class Relatorio{
 public:
-  void gerarRelatorio(Imprimivel& _objImprimivel);
+  void gerarRelatorio(Imprimivel&);
 };
 #endif // !RELATORIO_H
