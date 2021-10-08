@@ -3,20 +3,18 @@
 #include "../ContaBancaria/contabancaria.hpp"
 #include "../Imprimivel/imprimivel.hpp"
 
-class ContaPoupanca: public ContaBancaria{
+class ContaPoupanca: public ContaBancaria, public Imprimivel{
 public:
-
-  ContaPoupanca(int _numeroDaConta, double _saldo);
-  void sacar(double _valor);
-  void depositar(double _valor);
+  ContaPoupanca(int, double);
   
-
+  void sacar(double);
+  void depositar(double);
+  
   double getLimite() const;
-
-  void mostrarDados();
+  void mostrarDados() const;
 
 private:
-  double limite;
+  double limite = 1000;
 };  
 
 #endif // !CONTAPOUPANCA_H

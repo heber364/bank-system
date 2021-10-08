@@ -3,17 +3,16 @@
 #include "../ContaBancaria/contabancaria.hpp"
 #include "../Imprimivel/imprimivel.hpp"
 
-class ContaCorrente:  public ContaBancaria{
+class ContaCorrente:  public ContaBancaria, public Imprimivel{
 public:
-  ContaCorrente(int _numeroDaConta, double _saldo); 
+  ContaCorrente(int , double); 
 
-  void sacar(double _valor);
-  void depositar(double _valor);
-  void mostrarDados();
+  void sacar(double);
+  void depositar(double);
+  void mostrarDados() const;
   
 private:
-  double taxaDeOperacao = 0.01;
-
+  const double taxaDeOperacao = 0.01;
 };  
 
 

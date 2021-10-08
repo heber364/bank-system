@@ -3,7 +3,7 @@
 
 class Imprimivel{
 public:
-  virtual void mostrarDados() = 0;
+  virtual void mostrarDados() const = 0;
 };
 
 #endif // !IMPRIMIVEL_H

@@ -6,6 +6,7 @@ void SelecionarConta::setContaPrincipal(){
   std::cout << "INFORME O NUMERO DA CONTA PROCURADA:" << std::endl;
   std::cin >> numeroDaConta;
   contaSelecionada = bancoCentral.procurar(numeroDaConta);
+
 }
 
 void SelecionarConta::setContaSecundaria(){

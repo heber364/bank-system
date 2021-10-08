@@ -8,7 +8,7 @@
 
 class Banco:public Imprimivel{
 public:
-
+  
   std::vector<ContaBancaria*> ContasBancarias;
 
   void inserir(ContaBancaria*);
@@ -17,7 +17,7 @@ public:
 
   ContaBancaria* procurar(int);
 
-  void mostrarDados();
+  void mostrarDados() const;
 };  
 
 
