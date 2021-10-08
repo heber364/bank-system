@@ -75,7 +75,7 @@ void SelecionarConta::opcoesDoMenu(){
         }
       case 4:
         system("CLS");
-        contaSelecionada->imprimeDados();
+        contaSelecionada->mostrarDados();
         system("PAUSE");
         system("CLS");
         break;

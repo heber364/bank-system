@@ -49,8 +49,15 @@ double ContaBancaria::getLimite() const{
   return this->limite;
 }
 
+
+//metodo que seta o tipo de conta
+void ContaBancaria::setTipoDeConta(std::string _tipoDeConta){
+  this->TipoDeConta = _tipoDeConta;
+}
+
+
 //metodo virtual que mostra os dados da conta
-void ContaBancaria::imprimeDados(){
+void ContaBancaria::mostrarDados(){
   std::cout << "==========================================" << std::endl;
   std::cout << "Tipo de conta:   " << this->getTipoDeConta() << std::endl;
   std::cout << "Numero da conta: " << this->getNumeroDaConta() << std::endl;

@@ -1,5 +1,6 @@
 #ifndef SELECIONARCONTA_H
 #define SELECIONARCONTA_H
+#include <vector>
 
 #include "../../Banco/banco.hpp"
 #include "../../Relatorio/relatorio.hpp"

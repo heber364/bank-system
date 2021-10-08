@@ -3,7 +3,7 @@
 #include "../ContaBancaria/contabancaria.hpp"
 #include "../Imprimivel/imprimivel.hpp"
 
-class ContaCorrente:  public ContaBancaria, public Imprimivel{
+class ContaCorrente:  public ContaBancaria{
 public:
   ContaCorrente(int _numeroDaConta, double _saldo); 
 

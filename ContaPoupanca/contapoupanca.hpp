@@ -3,7 +3,7 @@
 #include "../ContaBancaria/contabancaria.hpp"
 #include "../Imprimivel/imprimivel.hpp"
 
-class ContaPoupanca: public ContaBancaria, public Imprimivel{
+class ContaPoupanca: public ContaBancaria{
 public:
 
   ContaPoupanca(int _numeroDaConta, double _saldo);

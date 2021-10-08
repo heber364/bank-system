@@ -1,8 +1,9 @@
 #ifndef CONTABANCARIA_H
 #define CONTABANCARIA_H
 #include <string>
+#include "../Imprimivel/imprimivel.hpp"
 
-class ContaBancaria{
+class ContaBancaria:public Imprimivel{
 public:
   ContaBancaria(int _numeroDaConta, double _saldo);
 
@@ -14,8 +15,9 @@ public:
   double getSaldo() const; 
   double getLimite() const;
   std::string getTipoDeConta() const;
+  void setTipoDeConta(std::string _tipoDeConta);
 
-  void imprimeDados();//////////////////////
+  void mostrarDados();//////////////////////
   
 protected:
   std::string TipoDeConta;
