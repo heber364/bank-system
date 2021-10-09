@@ -12,9 +12,8 @@ void RemoverConta::confirmarRemocao(){
   
   do{
     int opt;
-    std::cout << "------------------------------------------"<<std::endl;
+    std::cout << "========================================="<<std::endl;
     std::cout << "CONFIRMA REMOCAO DE CONTA [0] NAO [1] SIM" << std::endl;
-    std::cout << "------------------------------------------"<<std::endl;
     contaSelecionada->mostrarDados();
 
     std::cin >> opt;

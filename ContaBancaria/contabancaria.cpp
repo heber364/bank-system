@@ -8,15 +8,21 @@ ContaBancaria::ContaBancaria(int _numeroDaConta, double _saldo):numeroDaConta(_n
 //metodo de tranferir
 void ContaBancaria::transferir(double _valor, ContaBancaria& _conta){
   if(_valor > this->saldo){                  //SE O VALOR DE TRANFERENCIA FOR MAIOR, DÁ ERRO
-    std::cout << "Valor de transferencia maior que o saldo em conta!" << std::endl;
+    std::cout << "ERRO!! Valor de transferencia maior que o saldo em conta!!"   << std::endl;
+    std::cout << "=========================================================="   << std::endl;
+    std::cout << "Saldo atual:      " << this->saldo                            << std::endl;
+    std::cout << "Valor requerido:  " << _valor                                 << std::endl;
+    std::cout << "=========================================================="   << std::endl;
+    system("pause");
+    system("cls");
   }else{
     this->saldo = this->saldo - _valor;
     _conta.saldo = _conta.saldo + _valor;
-    std::cout << "Transferencia de R$" << _valor << " realizada com sucesso!"                                        << std::endl;
-    std::cout << "====================================="                                                             << std::endl;
-    std::cout << "Conta remetente: " << this->numeroDaConta << "Conta destinataria: " << _conta.getNumeroDaConta()   << std::endl;
-    std::cout << "Saldo atual:     " << this->saldo                                                                  << std::endl;
-    std::cout << "====================================="                                                             << std::endl; 
+    std::cout << "Transferencia de R$" << _valor << " realizada com sucesso!"                                           << std::endl;
+    std::cout << "================================================="                                                    << std::endl;
+    std::cout << "Conta remetente: " << this->numeroDaConta << "    Conta destinataria: " << _conta.getNumeroDaConta()  << std::endl;
+    std::cout << "Saldo atual:     " << this->saldo                                                                     << std::endl;
+    std::cout << "================================================="                                                    << std::endl; 
 
   }
 }

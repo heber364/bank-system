@@ -1,5 +1,5 @@
 #include "banco.hpp"
-
+#include "bancoCentral.hpp"
 
 void Banco::inserir(ContaBancaria* _conta){
   ContasBancarias.push_back(_conta);
@@ -31,14 +31,9 @@ void Banco::mostrarDados() const{
   }else{
     for (int i = 0; i < this->ContasBancarias.size(); i++){
       std::cout << "Conta - " << i + 1 << std::endl;
-      std::cout << "==========================================" << std::endl;
-      std::cout << "Tipo de conta:   " << this->ContasBancarias[i]->getTipoDeConta() << std::endl;
-      std::cout << "Numero da conta: " << this->ContasBancarias[i]->getNumeroDaConta() << std::endl;
-      std::cout << "Saldo:           " << this->ContasBancarias[i]->getSaldo() << std::endl;
-      std::cout << "==========================================\n" << std::endl;   
+      ContasBancarias[i]->mostrarDados();
     }
   }
   system("PAUSE");
   system("CLS");
-  
 };

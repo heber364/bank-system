@@ -38,7 +38,10 @@ void CriarConta::inserirDados(){
 
     contaAuxiliar = bancoCentral.procurar(numeroDaConta);
     if (contaAuxiliar != NULL){
-      std::cout << "Numero de conta existente! Por favor, escolha outro numero" << std::endl;
+      system("cls");
+      std::cout << "====================================================================="<<std::endl;
+      std::cout << "Numero de conta: '" << numeroDaConta << "' ja existe! Por favor, escolha outro numero" << std::endl;
+      std::cout << "====================================================================="<<std::endl;
       system("pause");
       system("cls");
     }else{
@@ -51,12 +54,12 @@ void CriarConta::inserirDados(){
 void CriarConta::confirmaDados(){
   system("cls");
   std::string _tipoDeConta = (this->tipoDeConta==1) ?  "Conta Corrente" : "Conta Poupanca" ;
-  std::cout << "---------------------------------------------"<<std::endl;
+  std::cout << "============================================"<<std::endl;
   std::cout << "Confima os dados? [0] NAO [1] SIM [2] Voltar" << std::endl;
-  std::cout << "---------------------------------------------"<<std::endl;
-  std::cout << "Tipo de conta: " << _tipoDeConta  << std::endl;
-  std::cout << "Numero da conta: " << numeroDaConta << std::endl;
-  std::cout << "Saldo Inicial: " << saldo << std::endl;
+  std::cout << "============================================"<<std::endl;
+  std::cout << "Tipo de conta:    " << _tipoDeConta  << std::endl;
+  std::cout << "Numero da conta:  " << numeroDaConta << std::endl;
+  std::cout << "Saldo Inicial:    " << saldo << std::endl;
   std::cin >> this->opt;
   system("cls");
 }
@@ -71,7 +74,6 @@ CriarConta::CriarConta(){
       confirmaDados(); //função para confirmar dados inseridos
       switch (this->opt){
         case 0:                                                                     //se escolher 0, o usuário digitará novamente os dados
-          std::cout << "Escreva os dados novamente!" << std::endl;
           this->confirmado1 = true;
           break;
         case 1:    
