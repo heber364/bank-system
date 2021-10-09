@@ -32,6 +32,7 @@ void Banco::mostrarDados() const{
     for (int i = 0; i < this->ContasBancarias.size(); i++){
       std::cout << "Conta - " << i + 1 << std::endl;
       ContasBancarias[i]->mostrarDados();
+      std::cout<<std::endl;
     }
   }
   system("PAUSE");
