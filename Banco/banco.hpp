@@ -20,5 +20,4 @@ public:
   void mostrarDados() const;
 };  
 
-
 #endif // !BANCO_H

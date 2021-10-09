@@ -14,7 +14,4 @@ public:
   Menu(); 
 };
 
-
-
-
 #endif // !MENU_H

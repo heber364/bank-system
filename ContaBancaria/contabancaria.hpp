@@ -6,7 +6,7 @@ class ContaBancaria{
 public:
   ContaBancaria(int _numeroDaConta, double _saldo);
 
-  virtual void sacar(double _valor) = 0 ;
+  virtual void sacar(double _valor) = 0;
   virtual void depositar(double _valor) = 0;
   void transferir(double _valor, ContaBancaria& _conta);
 
@@ -16,13 +16,12 @@ public:
 
   void setTipoDeConta(std::string _tipoDeConta);
 
-  virtual void mostrarDados() const;//////////////////////
+  virtual void mostrarDados() const = 0;
   
 protected:
-  std::string TipoDeConta;
   int numeroDaConta;
   double saldo;
-
+  std::string TipoDeConta;
 
 };
 

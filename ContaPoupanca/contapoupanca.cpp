@@ -6,8 +6,8 @@ ContaPoupanca::ContaPoupanca(int _numeroDaConta, double _saldo): ContaBancaria( 
   this->TipoDeConta = "Conta Poupanca";
 }; 
 
+
 void ContaPoupanca::sacar(double _valor){
-  
   //verifica se o saldo não é negativo
   if (this->saldo >= 0){
     //verifica o valor sacado é menor ou igual ao valor do saldo mais o limite
@@ -71,6 +71,7 @@ void ContaPoupanca::sacar(double _valor){
   }
 }
 
+
 //metodo de depositar
 void ContaPoupanca::depositar(double _valor){
   
@@ -111,6 +112,7 @@ void ContaPoupanca::depositar(double _valor){
   }
 
 }
+
 
 //metodo que retorna o saldo
 double ContaPoupanca::getLimite() const{

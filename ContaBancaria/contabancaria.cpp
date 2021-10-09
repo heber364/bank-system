@@ -23,7 +23,8 @@ void ContaBancaria::transferir(double _valor, ContaBancaria& _conta){
     std::cout << "Conta remetente: " << this->numeroDaConta << "    Conta destinataria: " << _conta.getNumeroDaConta()  << std::endl;
     std::cout << "Saldo atual:     " << this->saldo                                                                     << std::endl;
     std::cout << "================================================="                                                    << std::endl; 
-
+    system("pause");
+    system("cls");
   }
 }
 
@@ -50,6 +51,3 @@ void ContaBancaria::setTipoDeConta(std::string _tipoDeConta){
 int ContaBancaria::getNumeroDaConta() const{
   return this->numeroDaConta;
 };
-
-
-void ContaBancaria::mostrarDados() const{};

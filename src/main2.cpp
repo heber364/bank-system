@@ -3,7 +3,6 @@
 #include "../ContaPoupanca/contapoupanca.cpp"
 #include "../Banco/banco.cpp"
 #include "../Executavel/executavel.cpp"
-#include "../Relatorio/relatorio.cpp"
 #include "../Menu/CriarConta/criarconta.cpp"
 #include "../Menu/SelecionarConta/selecionarconta.cpp"
 #include "../Menu/RemoverConta/removerconta.cpp"

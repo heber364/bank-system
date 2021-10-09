@@ -38,6 +38,7 @@ void SelecionarConta::opcoesDoMenu(){
         double valorDeDeposito;
         std::cout << "Valor do deposito: ";
         std::cin >> valorDeDeposito;
+        system("CLS");
         contaSelecionada->depositar(valorDeDeposito);
         break;
       case 2:
@@ -45,6 +46,7 @@ void SelecionarConta::opcoesDoMenu(){
         double valorDeSaque;
         std::cout << "Valor do saque: ";
         std::cin >> valorDeSaque;  
+        system("CLS");
         contaSelecionada->sacar(valorDeSaque);
         break;
       case 3:
@@ -56,7 +58,6 @@ void SelecionarConta::opcoesDoMenu(){
         if (contaSelecionada2 != NULL){
           system("cls");
           contaSelecionada->transferir(valorDeTransferencia, *contaSelecionada2);
-          system("pause");
           system("cls");
         }else{
           system("cls");

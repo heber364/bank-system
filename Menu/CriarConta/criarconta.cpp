@@ -126,5 +126,3 @@ CriarConta::CriarConta(){
 
   system("CLS");
 };
-
-CriarConta::~CriarConta(){};
