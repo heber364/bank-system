@@ -5,30 +5,26 @@
 ContaBancaria::ContaBancaria(int _numeroDaConta, double _saldo):numeroDaConta(_numeroDaConta), saldo(_saldo){};
 
 
-//metodo de sacar
-void ContaBancaria::sacar(double _valor){
-  if(_valor > this->saldo){
-    std::cout << "Valor de saque maior que o saldo!" << std::endl;
-    system("PAUSE");
-  }else{
-    this->saldo = this->saldo - _valor;
-  }
-}
-
-
-//metodo de depositar
-void ContaBancaria::depositar(double _valor){
-  this->saldo = this->saldo + _valor;
-}
-
-
 //metodo de tranferir
 void ContaBancaria::transferir(double _valor, ContaBancaria& _conta){
   if(_valor > this->saldo){                  //SE O VALOR DE TRANFERENCIA FOR MAIOR, DÁ ERRO
-    std::cout << "Valor de transferencia maior que o saldo em conta!" << std::endl;
+    std::cout << "ERRO!! Valor de transferencia maior que o saldo em conta!!"   << std::endl;
+    std::cout << "=========================================================="   << std::endl;
+    std::cout << "Saldo atual:      " << this->saldo                            << std::endl;
+    std::cout << "Valor requerido:  " << _valor                                 << std::endl;
+    std::cout << "=========================================================="   << std::endl;
+    system("pause");
+    system("cls");
   }else{
     this->saldo = this->saldo - _valor;
-    _conta.saldo = _conta.saldo + _valor; 
+    _conta.saldo = _conta.saldo + _valor;
+    std::cout << "Transferencia de R$" << _valor << " realizada com sucesso!"                                           << std::endl;
+    std::cout << "================================================="                                                    << std::endl;
+    std::cout << "Conta remetente: " << this->numeroDaConta << "    Conta destinataria: " << _conta.getNumeroDaConta()  << std::endl;
+    std::cout << "Saldo atual:     " << this->saldo                                                                     << std::endl;
+    std::cout << "================================================="                                                    << std::endl; 
+    system("pause");
+    system("cls");
   }
 }
 
@@ -39,35 +35,19 @@ std::string ContaBancaria::getTipoDeConta() const{
 }
 
 
-//metodo que seta o tipo de conta
-void ContaBancaria::setTipoDeConta(std::string _tipoDeConta){
-  this->TipoDeConta = _tipoDeConta;
-}
-
-
 //metodo que retorna o saldo
 double ContaBancaria::getSaldo() const{
   return this->saldo;
 }
 
 
-//metodo virtual que mostra os dados da conta
-void ContaBancaria::mostrarDados() const{};
-
-
-//metodo que retorna o saldo
-double ContaBancaria::getLimite() const{
-  return this->limite;
+//metodo que seta o tipo de conta
+void ContaBancaria::setTipoDeConta(std::string _tipoDeConta){
+  this->TipoDeConta = _tipoDeConta;
 }
 
 
 //metodo que retornar o numero da conta
 int ContaBancaria::getNumeroDaConta() const{
   return this->numeroDaConta;
-};
-
-
-//destrutor
-ContaBancaria::~ContaBancaria(){
-  
 };

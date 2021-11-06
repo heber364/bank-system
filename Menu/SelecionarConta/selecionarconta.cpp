@@ -6,24 +6,23 @@ void SelecionarConta::setContaPrincipal(){
   std::cout << "INFORME O NUMERO DA CONTA PROCURADA:" << std::endl;
   std::cin >> numeroDaConta;
   contaSelecionada = bancoCentral.procurar(numeroDaConta);
-}
 
+}
 
 void SelecionarConta::setContaSecundaria(){
   int numeroDaConta;
-  std::cout << "Numero da conta que recebera a transferencia: " << std::endl;
+  std::cout << "Numero da conta que recebera a transferencia: ";
   std::cin >> numeroDaConta;
   contaSelecionada2 = bancoCentral.procurar(numeroDaConta);
 }
 
-
 void SelecionarConta::menu(){
   printBannerConta();
-  std::cout << "[ 1 ] Depositar [ 2 ] Sacar [ 3 ] Transferir [ 4 ] Gerar Relatorio"<< std::endl;
-  std::cout << "[ 5 ] Selecionar outra conta [ 0 ] Voltar ao Menu Principal "<< std::endl;
+  std::cout << "    [ 1 ] Depositar               [ 2 ] Sacar               [ 3 ] Transferir               [ 4 ] Gerar Relatorio   \n" << std::endl;
+  std::cout << "    [ 5 ] Selecionar outra conta  [ 0 ] Voltar ao Menu Principal " << std::endl;
+
   std::cin >> opt;
 }
-
 
 void SelecionarConta::opcoesDoMenu(){
   do{
@@ -35,43 +34,38 @@ void SelecionarConta::opcoesDoMenu(){
         system("CLS");
         break;
       case 1:
+        system("CLS");
         double valorDeDeposito;
         std::cout << "Valor do deposito: ";
         std::cin >> valorDeDeposito;
+        system("CLS");
         contaSelecionada->depositar(valorDeDeposito);
         break;
       case 2:
+        system("CLS");
         double valorDeSaque;
         std::cout << "Valor do saque: ";
         std::cin >> valorDeSaque;  
+        system("CLS");
         contaSelecionada->sacar(valorDeSaque);
         break;
       case 3:
+        system("cls");
         double valorDeTransferencia;
         std::cout << "Valor da tranferencia: ";
         std::cin >> valorDeTransferencia;
         setContaSecundaria();
         if (contaSelecionada2 != NULL){
-          if (valorDeTransferencia > contaSelecionada->getSaldo()){
-            std::cout << "Valor de transferencia maior que o saldo em conta!" << std::endl;
-            std::cout << "--------------------------------------------------" << std::endl;
-            std::cout << "Saldo atual: " << contaSelecionada->getSaldo() << std::endl;
-            std::cout << "Valor requerido: " << valorDeTransferencia << std::endl;
-            system("pause");
-            system("cls");
-          }else{
-            std::cout << "Transferencia realizada com sucesso!" << std::endl;
-            contaSelecionada->transferir(valorDeTransferencia, *contaSelecionada2);
-            system("pause");
-            system("cls");
-          }
-          
+          system("cls");
+          contaSelecionada->transferir(valorDeTransferencia, *contaSelecionada2);
+          system("cls");
         }else{
           system("cls");
           std::cout << "CONTA INEXISTENTE" << std::endl;
           system("PAUSE");
           system("cls");
         }
+        break;
       case 4:
         system("CLS");
         contaSelecionada->mostrarDados();

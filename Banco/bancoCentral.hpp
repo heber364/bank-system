@@ -5,5 +5,4 @@
 
 Banco bancoCentral;
 
-
 #endif // !BANCOCENTRAL_H

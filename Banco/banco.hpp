@@ -6,8 +6,9 @@
 #include "../ContaBancaria/contabancaria.hpp"
 #include "../Imprimivel/imprimivel.hpp"
 
-class Banco{
+class Banco:public Imprimivel{
 public:
+  
   std::vector<ContaBancaria*> ContasBancarias;
 
   void inserir(ContaBancaria*);
@@ -15,8 +16,8 @@ public:
   void remover(ContaBancaria*);
 
   ContaBancaria* procurar(int);
-  
-};  
 
+  void mostrarDados() const;
+};  
 
 #endif // !BANCO_H

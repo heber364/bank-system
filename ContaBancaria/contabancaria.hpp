@@ -5,27 +5,23 @@
 class ContaBancaria{
 public:
   ContaBancaria(int _numeroDaConta, double _saldo);
-  ~ContaBancaria();
 
-  virtual void sacar(double _valor);
-  virtual void depositar(double _valor);
-  virtual void mostrarDados() const;
-  
+  virtual void sacar(double _valor) = 0;
+  virtual void depositar(double _valor) = 0;
   void transferir(double _valor, ContaBancaria& _conta);
-  
+
   int getNumeroDaConta() const;
   double getSaldo() const; 
-  double getLimite() const;
-
   std::string getTipoDeConta() const;
-  void setTipoDeConta(std::string _tipoDeConta);
-    
 
+  void setTipoDeConta(std::string _tipoDeConta);
+
+  virtual void mostrarDados() const = 0;
+  
 protected:
-  std::string TipoDeConta;
   int numeroDaConta;
   double saldo;
-  double limite;
+  std::string TipoDeConta;
 
 };
 

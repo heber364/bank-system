@@ -10,7 +10,6 @@
 
 class CriarConta{
 private:
-
   int tipoDeConta;
   std::string NomeDoUsuario;
     
@@ -24,11 +23,9 @@ private:
   
 public:
   CriarConta();
-  ~CriarConta();
   void inserirDados(); 
   void confirmaDados();
   void setTipoDeConta();
-
 
 };
 

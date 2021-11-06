@@ -12,10 +12,6 @@ class Menu{
 
 public:
   Menu(); 
-
 };
-
-
-
 
 #endif // !MENU_H

@@ -1,9 +1,13 @@
 #ifndef SELECIONARCONTA_H
 #define SELECIONARCONTA_H
+#include <vector>
 
 #include "../../Banco/banco.hpp"
 #include "../../Relatorio/relatorio.hpp"
 #include "../../Imprimivel/imprimivel.hpp"
+
+#include "../../ContaPoupanca/contapoupanca.hpp"
+#include "../../contacorrente/contacorrente.hpp"
 
 #include "../../Banco/bancoCentral.hpp"
 
